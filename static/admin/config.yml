@@ -65,11 +65,13 @@ collections:
         widget: list
         fields:
           - { name: title, label: Title }
-          - { name: linkPath, label: LinkPath, required: "false" }
+          - name: linkPath
+            label: LinkPath
+            required: false
           - name: links
             label: Links
             widget: list
-            required: "false"
+            required: false
             fields:
               - { name: linkName, label: LinkName }
               - { name: linkPath, label: LinkPath }
@@ -83,4 +85,4 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
-        required: "false"
+        required: false
