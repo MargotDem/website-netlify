@@ -24,7 +24,6 @@ collections:
   - name: "homePage"
     label: "Home Page"
     folder: "/static/content"
-    create: true
     fields:
       - { name: title, label: Title }
       - name: "contents"
@@ -40,7 +39,6 @@ collections:
   - name: footer
     label: Footer
     folder: "/static/content"
-    create: true
     fields:
       - { name: title, label: Title }
       - name: sections
