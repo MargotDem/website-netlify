@@ -1,5 +1,6 @@
 backend:
-  name: gitlab
+  name: github
+  repo: MargotDem/website-netlify
 media_folder: "static/images"
 public_folder: "/images"
 collections:
@@ -64,11 +65,11 @@ collections:
         widget: list
         fields:
           - { name: title, label: Title }
-          - { name: linkPath, label: LinkPath, required: false }
+          - { name: linkPath, label: LinkPath, required: "false" }
           - name: links
             label: Links
             widget: list
-            required: false
+            required: "false"
             fields:
               - { name: linkName, label: LinkName }
               - { name: linkPath, label: LinkPath }
