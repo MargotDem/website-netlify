@@ -57,7 +57,6 @@ collections:
   - name: header
     label: Header
     folder: "/static/content"
-    create: true
     fields:
       - { name: title, label: Title }
       - name: sections
