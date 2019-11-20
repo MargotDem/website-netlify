@@ -1,0 +1,51 @@
+{
+  "name": "minimal-gatsby-typescript-template",
+  "private": true,
+  "description": "Minimal Gatsby Typescript Template",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "yarn lint --fix",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "bulma": "^0.8.0",
+    "gatsby": "^2.4.3",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-netlify-cms": "^4.1.28",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.1.23",
+    "gatsby-plugin-typescript": "^2.0.13",
+    "gatsby-remark-source-name": "^1.0.0",
+    "gatsby-source-filesystem": "^2.1.37",
+    "gatsby-transformer-remark": "^2.6.36",
+    "netlify-cms-app": "^2.9.7",
+    "node-sass": "^4.13.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-helmet": "^5.0.8",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "husky": "^2.2.0",
+    "jsdom": "^9.4.0",
+    "lint-staged": "^8.1.6",
+    "path": "^0.12.7",
+    "prettier": "^1.17.0",
+    "typescript": "^3.4.5"
+  }
+}
