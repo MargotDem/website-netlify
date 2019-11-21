@@ -4,6 +4,16 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 collections:
+  - name: someCollection
+    label: "Some Collection"
+    folder: "/static/content/slides"
+    create: true
+    fields:
+      - {label: Title, name: title, widget: string, tagname: ""}
+      - label: Body
+        name: body
+        widget: slides
+        separator: "\n\n<!--s-->\n\n"
   - name: page
     label: Page
     folder: "/static/content/pages"
