@@ -34,11 +34,11 @@ collections:
         required: false
   - name: "singleElements"
     label: "Single Elements"
+    delete: false
     files:
       - name: header
         label: Header
         file: "/static/content/header.md"
-        delete: false
         fields:
           - { name: title, label: Title }
           - name: sections
@@ -59,7 +59,6 @@ collections:
       - name: footer
         label: Footer
         file: "/static/content/footer.md"
-        delete: false
         fields:
           - { name: title, label: Title }
           - name: sections
@@ -76,7 +75,6 @@ collections:
       - name: "homePage"
         label: "Home Page"
         file: "/static/content/homePage.md"
-        delete: false
         fields:
           - { name: title, label: Title }
           - name: "contents"
