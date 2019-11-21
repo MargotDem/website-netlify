@@ -21,57 +21,6 @@ collections:
             collection: "content"
             searchFields: ["title"]
             valueField: "title"
-  - name: "homePage"
-    label: "Home Page"
-    folder: "/static/content"
-    fields:
-      - { name: title, label: Title }
-      - name: "contents"
-        label: "Contents"
-        widget: "list"
-        fields:
-          - name: "content"
-            label: "Content"
-            widget: "relation"
-            collection: "content"
-            searchFields: ["title"]
-            valueField: "title"
-  - name: footer
-    label: Footer
-    folder: "/static/content"
-    fields:
-      - { name: title, label: Title }
-      - name: sections
-        label: Sections
-        widget: list
-        fields:
-          - { name: title, label: Title }
-          - name: links
-            label: Links
-            widget: list
-            fields:
-              - { name: linkName, label: LinkName }
-              - { name: linkPath, label: LinkPath }
-  - name: header
-    label: Header
-    folder: "/static/content"
-    fields:
-      - { name: title, label: Title }
-      - name: sections
-        label: Sections
-        widget: list
-        fields:
-          - { name: title, label: Title }
-          - name: linkPath
-            label: LinkPath
-            required: false
-          - name: links
-            label: Links
-            widget: list
-            required: false
-            fields:
-              - { name: linkName, label: LinkName }
-              - { name: linkPath, label: LinkPath }
   - name: content
     label: Content
     folder: "/static/content/feature"
@@ -83,3 +32,57 @@ collections:
         name: "image"
         widget: "image"
         required: false
+  - name: "singleElements"
+    label: "Single Elements"
+    files:
+      - name: header
+        label: Header
+        file: "/static/content/header.md"
+        fields:
+          - { name: title, label: Title }
+          - name: sections
+            label: Sections
+            widget: list
+            fields:
+              - { name: title, label: Title }
+              - name: linkPath
+                label: LinkPath
+                required: false
+              - name: links
+                label: Links
+                widget: list
+                required: false
+                fields:
+                  - { name: linkName, label: LinkName }
+                  - { name: linkPath, label: LinkPath }
+      - name: footer
+        label: Footer
+        file: "/static/content/footer.md"
+        fields:
+          - { name: title, label: Title }
+          - name: sections
+            label: Sections
+            widget: list
+            fields:
+              - { name: title, label: Title }
+              - name: links
+                label: Links
+                widget: list
+                fields:
+                  - { name: linkName, label: LinkName }
+                  - { name: linkPath, label: LinkPath }
+      - name: "homePage"
+        label: "Home Page"
+        file: "/static/content/homePage.md"
+        fields:
+          - { name: title, label: Title }
+          - name: "contents"
+            label: "Contents"
+            widget: "list"
+            fields:
+              - name: "content"
+                label: "Content"
+                widget: "relation"
+                collection: "content"
+                searchFields: ["title"]
+                valueField: "title"
