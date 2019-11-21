@@ -38,6 +38,7 @@ collections:
       - name: header
         label: Header
         file: "/static/content/header.md"
+        delete: false
         fields:
           - { name: title, label: Title }
           - name: sections
@@ -58,6 +59,7 @@ collections:
       - name: footer
         label: Footer
         file: "/static/content/footer.md"
+        delete: false
         fields:
           - { name: title, label: Title }
           - name: sections
@@ -74,6 +76,7 @@ collections:
       - name: "homePage"
         label: "Home Page"
         file: "/static/content/homePage.md"
+        delete: false
         fields:
           - { name: title, label: Title }
           - name: "contents"
@@ -86,43 +89,43 @@ collections:
                 collection: "content"
                 searchFields: ["title"]
                 valueField: "title"
-  - name: testPage
-    label: TestPage
-    folder: "/static/content/testPages"
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: title, label: Title }
-      - name: "contents"
-        label: "Contents"
-        widget: "list"
-        fields:
-          - name: content
-            label: Content
-            widget: "object"
-            required: false
-            fields:
-              - { name: title, label: Title }
-              - { name: body, label: Description, widget: markdown }
-              - label: "Image"
-                name: "image"
-                widget: "image"
-                required: false
-          - name: simpleText
-            label: Simple Text
-            widget: "object"
-            required: false
-            fields:
-              - { name: title, label: Title }
-              - { name: body, label: Text, widget: markdown }
-          - name: buttons
-            label: Buttons
-            widget: "object"
-            required: false
-            fields:
-              - name: "buttonList"
-                label: "Buttons List"
-                widget: "list"
-                fields:
-                  - { name: "title", label: "Text" }
-                  - { name: "linkPath", label: "LinkPath"}
+  # - name: testPage
+  #   label: TestPage
+  #   folder: "/static/content/testPages"
+  #   create: true
+  #   fields:
+  #     - { name: path, label: Path }
+  #     - { name: title, label: Title }
+  #     - name: "contents"
+  #       label: "Contents"
+  #       widget: "list"
+  #       fields:
+  #         - name: content
+  #           label: Content
+  #           widget: "object"
+  #           required: false
+  #           fields:
+  #             - { name: title, label: Title }
+  #             - { name: body, label: Description, widget: markdown }
+  #             - label: "Image"
+  #               name: "image"
+  #               widget: "image"
+  #               required: false
+  #         - name: simpleText
+  #           label: Simple Text
+  #           widget: "object"
+  #           required: false
+  #           fields:
+  #             - { name: title, label: Title }
+  #             - { name: body, label: Text, widget: markdown }
+  #         - name: buttons
+  #           label: Buttons
+  #           widget: "object"
+  #           required: false
+  #           fields:
+  #             - name: "buttonList"
+  #               label: "Buttons List"
+  #               widget: "list"
+  #               fields:
+  #                 - { name: "title", label: "Text" }
+  #                 - { name: "linkPath", label: "LinkPath"}
