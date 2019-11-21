@@ -99,6 +99,7 @@ collections:
         fields:
           - name: content
             label: Content
+            widget: "object"
             required: false
             fields:
               - { name: title, label: Title }
@@ -109,12 +110,14 @@ collections:
                 required: false
           - name: simpleText
             label: Simple Text
+            widget: "object"
             required: false
             fields:
               - { name: title, label: Title }
               - { name: body, label: Text, widget: markdown }
           - name: buttons
             label: Buttons
+            widget: "object"
             required: false
             fields:
               - name: "buttonList"
