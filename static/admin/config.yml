@@ -86,3 +86,40 @@ collections:
                 collection: "content"
                 searchFields: ["title"]
                 valueField: "title"
+  - name: testPage
+    label: TestPage
+    folder: "/static/content/testPages"
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - name: "contents"
+        label: "Contents"
+        widget: "list"
+        fields:
+          - name: content
+            label: Content
+            required: false
+            fields:
+              - { name: title, label: Title }
+              - { name: body, label: Description, widget: markdown }
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                required: false
+          - name: simpleText
+            label: Simple Text
+            required: false
+            fields:
+              - { name: title, label: Title }
+              - { name: body, label: Text, widget: markdown }
+          - name: buttons
+            label: Buttons
+            required: false
+            fields:
+              - name: "buttonList"
+                label: "Buttons List"
+                widget: "list"
+                fields:
+                  - { name: "title", label: "Text" }
+                  - { name: "linkPath", label: "LinkPath"}
