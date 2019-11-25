@@ -5,7 +5,7 @@ contents:
   - newWidget:
       simpleContent:
         body: |-
-          This is the description of the first content
+          This is the description of the first content.
 
           With a [link](https://bulma.io/documentation/form/input/)
         image: /images/mountain.jpeg
