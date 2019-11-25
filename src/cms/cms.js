@@ -1,5 +1,5 @@
 import CMS from "netlify-cms-app"
 
-import { SlidesControl, SlidesPreview } from "./Slides";
+import {NewWidgetControl} from "./NewWidgetControl"
 
-  CMS.registerWidget("slides", SlidesControl, SlidesPreview);
+CMS.registerWidget('newWidget', NewWidgetControl);

@@ -9,9 +9,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ) {
         edges {
           node {
-            html
             frontmatter {
               path
+              hidden
             }
           }
         }

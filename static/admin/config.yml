@@ -4,44 +4,47 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 collections:
-  - name: someCollection
-    label: "Some Collection"
-    folder: "/static/content/slides"
-    create: true
-    fields:
-      - {label: Title, name: title, widget: string, tagname: ""}
-      - label: Body
-        name: body
-        widget: slides
-        separator: "\n\n<!--s-->\n\n"
-  - name: page
-    label: Page
-    folder: "/static/content/pages"
+  - name: contentfulPage
+    label: "Contentful Page"
+    folder: "/static/content/pages/contentfulPages"
     create: true
     fields:
       - { name: path, label: Path }
       - { name: title, label: Title }
+      - {label: "Hidden", name: "hidden", widget: "hidden", default: "contentfulPage"}
       - name: "contents"
         label: "Contents"
         widget: "list"
         fields:
-          - name: "content"
-            label: "Content"
-            widget: "relation"
-            collection: "content"
-            searchFields: ["title"]
-            valueField: "title"
-  - name: content
-    label: Content
-    folder: "/static/content/feature"
+        - label: "New widget"
+          name: "newWidget"
+          widget: "newWidget"
+          fields:
+            - name: simpleContent
+              label: "Simple Content"
+              widget: "object"
+              fields:
+                - { name: title, label: Title }
+                - { name: body, label: Description, widget: markdown }
+                - label: "Image"
+                  name: "image"
+                  widget: "image"
+                  required: false
+            - name: "text"
+              label: "Text"
+              widget: "object"
+              fields:
+                - { name: "title", label: "Title" }
+                - { name: "text", label: "Text", widget: "text"}
+  - name: simplePage
+    label: "Simple Page"
+    folder: "/static/content/pages/simplePages"
     create: true
     fields:
+      - { name: path, label: Path }
       - { name: title, label: Title }
+      - {label: "Hidden", name: "hidden", widget: "hidden", default: "simplePage"}
       - { name: body, label: Description, widget: markdown }
-      - label: "Image"
-        name: "image"
-        widget: "image"
-        required: false
   - name: "singleElements"
     label: "Single Elements"
     delete: false
@@ -97,43 +100,3 @@ collections:
                 collection: "content"
                 searchFields: ["title"]
                 valueField: "title"
-  # - name: testPage
-  #   label: TestPage
-  #   folder: "/static/content/testPages"
-  #   create: true
-  #   fields:
-  #     - { name: path, label: Path }
-  #     - { name: title, label: Title }
-  #     - name: "contents"
-  #       label: "Contents"
-  #       widget: "list"
-  #       fields:
-  #         - name: content
-  #           label: Content
-  #           widget: "object"
-  #           required: false
-  #           fields:
-  #             - { name: title, label: Title }
-  #             - { name: body, label: Description, widget: markdown }
-  #             - label: "Image"
-  #               name: "image"
-  #               widget: "image"
-  #               required: false
-  #         - name: simpleText
-  #           label: Simple Text
-  #           widget: "object"
-  #           required: false
-  #           fields:
-  #             - { name: title, label: Title }
-  #             - { name: body, label: Text, widget: markdown }
-  #         - name: buttons
-  #           label: Buttons
-  #           widget: "object"
-  #           required: false
-  #           fields:
-  #             - name: "buttonList"
-  #               label: "Buttons List"
-  #               widget: "list"
-  #               fields:
-  #                 - { name: "title", label: "Text" }
-  #                 - { name: "linkPath", label: "LinkPath"}
