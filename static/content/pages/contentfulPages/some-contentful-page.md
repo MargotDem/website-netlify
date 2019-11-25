@@ -1,11 +1,13 @@
 ---
 path: /some-contentful-page
 title: Some Contentful Page
-hidden: contentfulPage
 contents:
   - newWidget:
       simpleContent:
-        body: this is the description of the first content
+        body: |-
+          This is the description of the first content
+
+          With a [link](https://bulma.io/documentation/form/input/)
         image: /images/mountain.jpeg
         title: First content of page
   - newWidget:
