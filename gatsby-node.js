@@ -1,7 +1,9 @@
 const path = require(`path`)
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const pageTemplate = path.resolve(`src/templates/simplePageTemplate.tsx`)
+  const simplePageTemplate = path.resolve(`src/templates/simplePageTemplate.tsx`)
+  const contentfulPageTemplate = path.resolve(`src/templates/contentfulPageTemplate.tsx`)
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -11,13 +13,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               path
-              hidden
             }
           }
         }
       }
     }
   `)
+
+  function getTemplate(pageType) {
+    switch (pageType) {
+      case "contentfulPage":
+        return contentfulPageTemplate
+      case "simplePage":
+        return simplePageTemplate
+    }
+  }
   // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
@@ -26,7 +36,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
-      component: pageTemplate,
+      // component: getTemplate(node.frontmatter.pageType),
+      component: simplePageTemplate,
       context: {}, // additional data can be passed via context
     })
   })

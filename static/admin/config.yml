@@ -11,7 +11,7 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: title, label: Title }
-      - {label: "Hidden", name: "hidden", widget: "hidden", default: "contentfulPage"}
+      - {label: "Page Type", name: "pageType", widget: "hidden", default: "contentfulPage"}
       - name: "contents"
         label: "Contents"
         widget: "list"
@@ -43,7 +43,7 @@ collections:
     fields:
       - { name: path, label: Path }
       - { name: title, label: Title }
-      - {label: "Hidden", name: "hidden", widget: "hidden", default: "simplePage"}
+      - {label: "Page Type", name: "pageType", widget: "hidden", default: "simplePage"}
       - { name: body, label: Description, widget: markdown }
   - name: "singleElements"
     label: "Single Elements"
