@@ -36,6 +36,7 @@ collections:
               fields:
                 - { name: "title", label: "Title" }
                 - { name: "text", label: "Text", widget: "text"}
+      - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: simplePage
     label: "Simple Page"
     folder: "/static/content/pages/simplePages"
@@ -45,6 +46,7 @@ collections:
       - { name: title, label: Title }
       - {label: "Page Type", name: "pageType", widget: "hidden", default: "simplePage"}
       - { name: body, label: Description, widget: markdown }
+      - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: "singleElements"
     label: "Single Elements"
     delete: false

@@ -11,6 +11,7 @@ export class NewWidgetControl extends Component {
 
     handleSelectChange(e) {
         this.setState({ selectValue: e.target.value })
+        this.props.onChange(undefined)
     }
 
     renderWidgetControl() {
@@ -35,6 +36,7 @@ export class NewWidgetControl extends Component {
     render() {
 
         let { selectValue } = this.state
+        console.log("heyyy value ", this.props.value)
 
         return (
             <div>
