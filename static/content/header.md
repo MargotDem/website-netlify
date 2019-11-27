@@ -1,21 +1,22 @@
 ---
-title: Header
+title: "Header"
 sections:
-  - linkPath: comment
-    title: Comment
-  - links:
-      - linkName: Home
-        linkPath: /
-      - linkName: Terms of use
-        linkPath: terms-of-use
-      - linkName: Comment
-        linkPath: comment
-      - linkName: Quoi
-        linkPath: quoi
-    title: Plus de liens
-  - linkPath: privacy-policy
-    title: Privacy policy
-  - linkPath: quoi
-    title: Quoi
+  - title: "Comment"
+    linkPath: "comment"
+  - title: "Privacy policy"
+    linkPath: "privacy-policy"
+  - title: "Quoi"
+    linkPath: "quoi"
+  - title: "Another website"
+    linkPath: "https://bulma.io/documentation/components/dropdown/"
+  - title: "Plus de liens"
+    links:
+      - linkName: "Home"
+        linkPath: "/"
+      - linkName: "Terms of use"
+        linkPath: "terms-of-use"
+      - linkName: "Comment"
+        linkPath: "comment"
+      - linkName: "Random website"
+        linkPath: "https://fr.reactjs.org/"
 ---
-

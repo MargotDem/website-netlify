@@ -1,0 +1,13 @@
+.git/
+.build/
+log/
+node_modules/
+.env
+**/.env.sample
+.dockerignore
+.editorconfig
+.gitignore
+*.log
+*.md
+npm-debug.log
+Dockerfile*

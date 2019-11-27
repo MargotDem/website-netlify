@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /page-data/404
+Disallow: /page-data/404.html
+Disallow: /page-data/dev-404-page
+Disallow: /page-data/some-contentful-pagae
+
+Sitemap: https://nua.ge/sitemap.xml

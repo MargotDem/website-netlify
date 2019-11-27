@@ -6,6 +6,9 @@ const utils = {
         const pageContents = frontmatter.contents.map(content => content.content).map(name => contents.find(content => content.title == name))
 
         return pageContents
+    },
+    isExternalLink: function (link: string) {
+        return link.substring(0, 4) == "http"
     }
 }
 

@@ -1,23 +1,26 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Contents from "../components/contents"
-import utils from "../lib/utils"
+import React from "react";
+import { graphql } from "gatsby";
 
-import withMainLayout from "./mainLayout"
+import withMainLayout from "./mainLayout";
+import SEO from "../components/SEO";
 
-const SimplePageTemplate = ({ data, contents }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter } = markdownRemark
-  // const pageContents = utils.extractContents(data, contents)
+const SimplePageTemplate = ({ data }) => {
+  const { markdownRemark } = data;
+  const { html } = markdownRemark;
   return (
-    <div>
-      simple page template
-      <br/>
-      {frontmatter.title}
-    </div>
-      // <Contents contents={pageContents}/>
-  )
-}
+    <>
+      <SEO data={markdownRemark.frontmatter} />
+      <section className="section">
+        <div className="container">
+          <div
+            className="markdown"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </div>
+      </section>
+    </>
+  );
+};
 
 export const pageQuery = graphql`
   query($path: String!) {
@@ -26,8 +29,9 @@ export const pageQuery = graphql`
         path
         title
       }
+      html
     }
   }
-`
+`;
 
-export default withMainLayout(SimplePageTemplate)
+export default withMainLayout(SimplePageTemplate);

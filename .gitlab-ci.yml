@@ -1,0 +1,24 @@
+include:
+  # Extend default template with some Oxeva custom configurations for a NodeJS webapp project
+  - project: 'cloud/gitlab-ci'
+    ref: master
+    file: '/templates/nodejs-webapp/nodejs-webapp.gitlab-ci.yml'
+
+
+variables:
+  CI_DEBUG_TRACE: 0
+  LINT_JS_DISABLED: 1
+  LINT_CSS_DISABLED: 1
+  UNIT_TESTS_DISABLED: 1
+  FUNCTIONAL_TESTS_DISABLED: 1
+  E2E_CHROME_DISABLED: 1
+  E2E_FIREFOX_DISABLED: 1
+  BUILD_STYLEGUIDE_DISABLED: 1
+  PAGES_DISABLED: 1
+  STAGING_DISABLED: 1
+
+# TODO: remove the following when the 'lab' tag will have been changed to 'cloud-preprod' in the nodejs-webapp template
+staging:
+  stage: deploy
+  tags:
+    - cloud-preprod

@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  node:
+    build:
+      context: .
+      target: develop
+    volumes:
+      - ${PWD}/src/:/home/node/app/src/
+      - ${PWD}/static/:/home/node/app/static/
+      - ${PWD}/server/:/home/node/app/server/
+      - ${PWD}/.env:/home/node/app/.env
+    ports:
+      - "${PORT:-8443}:${PORT:-8443}"

@@ -16,16 +16,16 @@ collections:
         label: "Contents"
         widget: "list"
         fields:
-        - label: "New widget"
-          name: "newWidget"
-          widget: "newWidget"
+        - label: "Content Types Widget"
+          name: "contentTypesWidget"
+          widget: "contentTypesWidget"
           fields:
             - name: simpleContent
               label: "Simple Content"
               widget: "object"
               fields:
                 - { name: title, label: Title }
-                - { name: body, label: Description, widget: markdown }
+                - { name: description, label: Description, widget: markdown }
                 - label: "Image"
                   name: "image"
                   widget: "image"
