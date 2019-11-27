@@ -84,7 +84,7 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: `standalone`,
-        icon: config.siteLogo,
+        icon: config.siteLogoStatic,
       },
     },
   ],

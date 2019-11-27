@@ -9,7 +9,7 @@ const SimplePageTemplate = ({ data }) => {
   const { html } = markdownRemark;
   return (
     <>
-      <SEO data={markdownRemark.frontmatter} />
+      <SEO data={markdownRemark.frontmatter.metaData} />
       <section className="section">
         <div className="container">
           <div
@@ -24,10 +24,19 @@ const SimplePageTemplate = ({ data }) => {
 
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(frontmatter: { metaData: { path: { eq: $path } } }) {
       frontmatter {
-        path
-        title
+        metaData {
+          path
+          title
+          description
+          image {
+            imagePath
+            imageAlt
+          }
+          openGraphType
+          twitterCard
+        }
       }
       html
     }

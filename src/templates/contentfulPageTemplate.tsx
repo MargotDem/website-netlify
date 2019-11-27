@@ -29,9 +29,9 @@ const SimplePageTemplate = ({ data }) => {
   }
   return (
     <div>
-      <SEO data={markdownRemark.frontmatter} />
-      {frontmatter.contents.map(({ newWidget }, i: number) => {
-        return <div key={i}>{displayContent(newWidget)}</div>;
+      <SEO data={markdownRemark.frontmatter.metaData} />
+      {frontmatter.contents.map(({ contentTypesWidget }, i: number) => {
+        return <div key={i}>{displayContent(contentTypesWidget)}</div>;
       })}
     </div>
   );
@@ -39,12 +39,21 @@ const SimplePageTemplate = ({ data }) => {
 
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(frontmatter: { metaData: { path: { eq: $path } } }) {
       frontmatter {
-        path
-        title
+        metaData {
+          path
+          title
+          description
+          image {
+            imagePath
+            imageAlt
+          }
+          openGraphType
+          twitterCard
+        }
         contents {
-          newWidget {
+          contentTypesWidget {
             simpleContent {
               description
               image
