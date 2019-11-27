@@ -1,10 +1,17 @@
 ---
-path: /some-contentful-page
-title: Some Contentful Page
+metaData:
+  description: A page with some contents.
+  image:
+    imageAlt: nuage social share image alt
+    imagePath: /images/nuage-social-share-image.png
+  openGraphType: website
+  path: /some-contentful-page
+  title: Some Contentful Page
+  twitterCard: summary
 pageType: contentfulPage
-lastmod: '2019-11-23'
+title: Some Contentful Page
 contents:
-  - newWidget:
+  - contentTypesWidget:
       simpleContent:
         description: |-
           This is the description of the first content.
@@ -12,9 +19,10 @@ contents:
           With a [link](https://bulma.io/documentation/form/input/)
         image: /images/mountain.jpeg
         title: First content of page
-  - newWidget:
+  - contentTypesWidget:
       text:
         text: 'This is the second content, a simple text.'
         title: Second content of page
+lastmod: '2019-11-27'
 ---
 
