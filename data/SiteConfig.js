@@ -5,7 +5,7 @@ const config = {
   siteUrl: "https://www.nua.ge",
   backgroundColor: "#ff0000",
   themeColor: "#0000ff",
-  siteLogoStatic: "/static/icon.png",
+  siteLogoStatic: "static/icon.png",
   siteLogo: "/icon.png",
   twitterHandle: "@nuageXXXXX",
   siteDefaultImage: "/images/nuage-social-share-image.png",
