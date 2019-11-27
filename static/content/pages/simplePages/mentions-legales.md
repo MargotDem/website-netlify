@@ -1,8 +1,16 @@
 ---
-path: /mentions-legales
-title: Mentions légales
+metaData:
+  description: Nos mentions légales sont les suivantes
+  image:
+    imageAlt: default social share image
+    imagePath: /images/nuage-social-share-image.png
+  openGraphType: website
+  path: /mentions-legales
+  title: Mentions légales
+  twitterCard: summary
 pageType: simplePage
-lastmod: '2019-11-23'
+title: Mentions légales
+lastmod: '2019-11-27'
 ---
 # MENTIONS LÉGALES
 
