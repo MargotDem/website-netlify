@@ -14,7 +14,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             frontmatter {
-              path
+              metaData {
+                path
+              }
               pageType
               lastmod
             }
@@ -44,7 +46,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const template = getTemplate(pageInfo.pageType);
     if (template) {
       createPage({
-        path: pageInfo.path,
+        path: pageInfo.metaData.path,
         component: template,
         context: {
           lastmod: pageInfo.lastmod
