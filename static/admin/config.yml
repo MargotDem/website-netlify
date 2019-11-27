@@ -9,9 +9,24 @@ collections:
     folder: "/static/content/pages/contentfulPages"
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: title, label: Title }
+      - name: "metaData"
+        label: "Meta Data"
+        widget: "object"
+        fields:
+          - { name: "path", label: "Path" }
+          - { name: "title", label: "Title" }
+          - { name: "description", label: "Description", widget: "text", required: false }
+          - name: "image"
+            label: "Image"
+            widget: "object"
+            required: false
+            fields:
+              - { name: "imagePath", label: "Image Path", widget: "image" }
+              - { name: "imageAlt", label: "Image Alt", widget: "string" }
+          - { name: "openGraphType", label: "Open Graph Type", widget: "string", default: "website" }
+          - { name: "twitterCard", label: "Twitter Card", widget: "string", default: "summary" }
       - {label: "Page Type", name: "pageType", widget: "hidden", default: "contentfulPage"}
+      - { name: "title", label: "Title" }
       - name: "contents"
         label: "Contents"
         widget: "list"
@@ -42,9 +57,24 @@ collections:
     folder: "/static/content/pages/simplePages"
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: title, label: Title }
+      - name: "metaData"
+        label: "Meta Data"
+        widget: "object"
+        fields:
+          - { name: "path", label: "Path" }
+          - { name: "title", label: "Title" }
+          - { name: "description", label: "Description", widget: "text", required: false }
+          - name: "image"
+            label: "Image"
+            widget: "object"
+            required: false
+            fields:
+              - { name: "imagePath", label: "Image Path", widget: "image" }
+              - { name: "imageAlt", label: "Image Alt", widget: "string" }
+          - { name: "openGraphType", label: "Open Graph Type", widget: "string", default: "website" }
+          - { name: "twitterCard", label: "Twitter Card", widget: "string", default: "summary" }
       - {label: "Page Type", name: "pageType", widget: "hidden", default: "simplePage"}
+      - { name: title, label: Title }
       - { name: body, label: Description, widget: markdown }
       - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: "singleElements"
