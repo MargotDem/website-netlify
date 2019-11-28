@@ -16,13 +16,15 @@ contents:
         description: |-
           This is the description of the first content.
 
+          Description description
+
           With a [link](https://bulma.io/documentation/form/input/)
         image: /images/mountain.jpeg
         title: First content of page
   - contentTypesWidget:
       text:
-        text: 'This is the second content, a simple text.'
+        text: 'This is the second content, a simple text. Lalala.'
         title: Second content of page
-lastmod: '2019-11-27'
+lastmod: '2019-11-28'
 ---
 
