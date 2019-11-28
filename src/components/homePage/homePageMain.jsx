@@ -5,7 +5,7 @@ const HomePageMain = () => (
     <div className="container has-text-centered">
       <div className="columns">
         <div className="column is-12 is-10-desktop is-offset-1-desktop home-title">
-          <h1>Le Cloud Computing dans son plus simple appareil</h1>
+          <h1>egrdtfLe Cloud Computing dans son plus simple appareil</h1>
         </div>
       </div>
 
