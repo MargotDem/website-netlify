@@ -25,6 +25,11 @@ contents:
       text:
         text: 'This is the second content, a simple text. Lalala.'
         title: Second content of page
+  - contentTypesWidget:
+      simpleContent:
+        description: Hello there.
+        image: /images/grass.jpeg
+        title: Third content of page
 lastmod: '2019-11-28'
 ---
 
