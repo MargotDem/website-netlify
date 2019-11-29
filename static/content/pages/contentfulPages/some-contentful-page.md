@@ -26,10 +26,14 @@ contents:
         text: 'This is the second content, a simple text. Lalala.'
         title: Second content of page
   - contentTypesWidget:
+      imageAndText:
+        image: /images/flower.jpeg
+        text: flower flower. text text
+  - contentTypesWidget:
       simpleContent:
         description: Hello there.
         image: /images/grass.jpeg
         title: Third content of page
-lastmod: '2019-11-28'
+lastmod: '2019-11-29'
 ---
 
