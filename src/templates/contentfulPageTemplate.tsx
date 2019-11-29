@@ -5,6 +5,7 @@ import withMainLayout from "./mainLayout";
 import SEO from "../components/SEO";
 import SimpleContent from "../components/contents/simpleContent";
 import Text from "../components/contents/text";
+import ImageAndText from "../components/contents/imageAndText";
 
 const SimplePageTemplate = ({ data }) => {
   const { markdownRemark } = data;
@@ -23,6 +24,8 @@ const SimplePageTemplate = ({ data }) => {
         return <SimpleContent content={content[contentType]} />;
       case "text":
         return <Text content={content[contentType]} />;
+      case "imageAndText":
+        return <ImageAndText content={content[contentType]} />
       default:
         return <div>(unknown content type)</div>;
     }
@@ -61,6 +64,10 @@ export const pageQuery = graphql`
             }
             text {
               title
+              text
+            }
+            imageAndText {
+              image
               text
             }
           }

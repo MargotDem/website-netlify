@@ -51,6 +51,12 @@ collections:
               fields:
                 - { name: "title", label: "Title" }
                 - { name: "text", label: "Text", widget: "text"}
+            - name: "imageAndText"
+              label: "Image and Text"
+              widget: "object"
+              fields:
+                - { name: "image", label: "Image", widget: "image" }
+                - { name: "text", label: "Text", widget: "text"}
       - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: simplePage
     label: "Simple Page"

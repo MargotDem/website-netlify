@@ -23,6 +23,10 @@ contents:
       text:
         text: 'This is the second content, a simple text.'
         title: Second content of page
+  - contentTypesWidget:
+      imageAndText:
+        image: /images/grass.jpeg
+        text: This is the text
 lastmod: '2019-11-27'
 ---
 

@@ -1,7 +1,7 @@
 import CMS from "netlify-cms-app";
 
-import { ContentTypesWidget } from "./ContentTypesWidget";
+import { ContentTypesControl } from "./ContentTypesControl";
 import { HiddenDateControl } from "./HiddenDateControl";
 
-CMS.registerWidget("contentTypesWidget", ContentTypesWidget);
+CMS.registerWidget("contentTypesWidget", ContentTypesControl);
 CMS.registerWidget("hiddenDate", HiddenDateControl);
