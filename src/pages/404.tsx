@@ -5,6 +5,8 @@ import { Link } from "gatsby";
 import Global from "../templates/globalHelmet";
 import config from "../../data/SiteConfig";
 
+import "../styles/styles.scss";
+
 const AboutPage = () => (
   <Global>
     <Helmet>
@@ -18,10 +20,10 @@ const AboutPage = () => (
       <section className="hero">
         <div className="hero-body">
           <div className="container has-text-centered">
-            <h1 className="title">404</h1>
-            <h2 className="subtitle">
+            <h1>404</h1>
+            <h3>
               <strong>Something’s missing</strong>
-            </h2>
+            </h3>
             <div>
               This page is missing or you assembled the link incorrectly.
             </div>

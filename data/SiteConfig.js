@@ -1,8 +1,8 @@
 const config = {
-  siteTitle: "Nuage",
-  siteTitleShort: "Nuage",
+  siteTitle: "Nua.ge",
+  siteTitleShort: "Nua.ge",
   siteDescription: "Description",
-  siteUrl: "https://www.nua.ge",
+  siteUrl: "https://nua.ge",
   backgroundColor: "#ff0000",
   themeColor: "#0000ff",
   siteLogoStatic: "static/icon.png",

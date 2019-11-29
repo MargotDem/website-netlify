@@ -1,4 +1,15 @@
 ##############################
+# VALIDATE NGINX CONFIG      #
+##############################
+FROM nginx:alpine
+
+COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
+
+RUN nginx -t
+
+USER nginx
+
+##############################
 # BASE                       #
 ##############################
 FROM node:12-alpine as base
@@ -18,6 +29,7 @@ COPY .eslintrc.js ./
 COPY tsconfig.json ./
 COPY gatsby-config.js ./
 COPY gatsby-node.js ./
+COPY data/ ./data/
 
 # Install app dependencies.
 # The following command is necessary for the build to work since the app has been upgraded to node 11
@@ -27,16 +39,9 @@ RUN npm set unsafe-perm true
 RUN npm ci
 
 ##############################
-# DEVELOP                    #
+# BUILD                      #
 ##############################
-FROM base as develop
-
-CMD ["npm", "run", "start"]
-
-##############################
-# RELEASE                    #
-##############################
-FROM base as production
+FROM base as build
 
 # Build the app
 # then remove dev dependencies
@@ -48,8 +53,30 @@ RUN npm run build && \
 # Set the user to use (for security purpose)
 USER node
 
-# Starting command
-CMD ["npm", "run", "serve"]
+##############################
+# DEVELOP                    #
+##############################
+FROM nginx:alpine as develop
 
-# Check at a given interval that the service is up
-HEALTHCHECK --interval=12s --timeout=12s --start-period=30s CMD node server/healthcheck.js -e
+RUN rm -rf /usr/share/nginx/html/*
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
+
+COPY --from=build /home/node/app/public /usr/share/nginx/html
+COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
+
+#USER nginx
+
+##############################
+# RELEASE                    #
+##############################
+FROM nginx:alpine as production
+
+RUN rm -rf /usr/share/nginx/html/*
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
+
+COPY --from=build /home/node/app/public /usr/share/nginx/html
+COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
+
+#USER nginx

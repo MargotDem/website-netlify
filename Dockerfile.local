@@ -1,0 +1,56 @@
+##############################
+# BASE                       #
+##############################
+FROM node:12-alpine as base
+
+# Create app directory
+WORKDIR /home/node/app/
+
+# Make sure to use the latest npm version (for fixes & speed improvements)
+RUN npm i npm@latest -g
+
+# Copy app sources
+COPY server/ ./server/
+COPY src/ ./src/
+COPY static/ ./static/
+COPY package*.json ./
+COPY .eslintrc.js ./
+COPY tsconfig.json ./
+COPY gatsby-config.js ./
+COPY gatsby-node.js ./
+COPY data/ ./data/
+
+# Install app dependencies.
+# The following command is necessary for the build to work since the app has been upgraded to node 11
+RUN npm set unsafe-perm true
+
+# Use npm ci instead of npm install as it's faster and better suited for CI/CD (cf https://docs.npmjs.com/cli/ci)
+RUN npm ci
+
+##############################
+# DEVELOP                    #
+##############################
+FROM base as develop
+
+CMD ["npm", "run", "start"]
+
+##############################
+# RELEASE                    #
+##############################
+FROM base as production
+
+# Build the app
+# then remove dev dependencies
+# then remove app sources (only keeping resulting build)
+RUN npm run build && \
+    npm prune --production && \
+    rm -rf src
+
+# Set the user to use (for security purpose)
+USER node
+
+# Starting command
+CMD ["npm", "run", "serve"]
+
+# Check at a given interval that the service is up
+HEALTHCHECK --interval=12s --timeout=12s --start-period=30s CMD node server/healthcheck.js -e

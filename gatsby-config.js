@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 /* eslint-disable */
-var moment = require('moment');
+var moment = require("moment");
 const config = require("./data/SiteConfig");
 
 module.exports = {
@@ -47,6 +47,11 @@ module.exports = {
               }
             }
         }`,
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+        ],
         serialize: ({ site, allSitePage }) => {
           return (allSitePage.edges.map(edge => {
             const page = edge.node

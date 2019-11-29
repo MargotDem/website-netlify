@@ -23,8 +23,8 @@ collections:
             fields:
               - { name: "imagePath", label: "Image Path", widget: "image" }
               - { name: "imageAlt", label: "Image Alt", widget: "string" }
-          - { name: "openGraphType", label: "Open Graph Type", widget: "string", default: "website" }
-          - { name: "twitterCard", label: "Twitter Card", widget: "string", default: "summary" }
+          - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
+          - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
       - {label: "Page Type", name: "pageType", widget: "hidden", default: "contentfulPage"}
       - { name: "title", label: "Title" }
       - name: "contents"
@@ -51,12 +51,6 @@ collections:
               fields:
                 - { name: "title", label: "Title" }
                 - { name: "text", label: "Text", widget: "text"}
-            - name: "imageAndText"
-              label: "Image and Text"
-              widget: "object"
-              fields:
-                - { name: "image", label: "Image", widget: "image" }
-                - { name: "text", label: "Text", widget: "text"}
       - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: simplePage
     label: "Simple Page"
@@ -77,8 +71,8 @@ collections:
             fields:
               - { name: "imagePath", label: "Image Path", widget: "image" }
               - { name: "imageAlt", label: "Image Alt", widget: "string" }
-          - { name: "openGraphType", label: "Open Graph Type", widget: "string", default: "website" }
-          - { name: "twitterCard", label: "Twitter Card", widget: "string", default: "summary" }
+          - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
+          - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
       - {label: "Page Type", name: "pageType", widget: "hidden", default: "simplePage"}
       - { name: title, label: Title }
       - { name: body, label: Description, widget: markdown }

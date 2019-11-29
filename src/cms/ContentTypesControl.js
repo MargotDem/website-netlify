@@ -1,5 +1,6 @@
 import CMS from "netlify-cms-app";
 import React, { Component } from "react";
+import contentTypes from "../../data/ContentTypes";
 
 export class ContentTypesControl extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ export class ContentTypesControl extends Component {
   }
 
   componentDidMount() {
+    // when modifying an existing content: set the selectValue with the right content type
+    // to display the right object control, and not the select
     let content = this.props.value;
     if (content) {
       let value = content.keys().next().value;
@@ -55,9 +58,13 @@ export class ContentTypesControl extends Component {
             onChange={this.handleSelectChange}
           >
             <option value="">Choose...</option>
-            <option value="simpleContent">Simple content</option>
-            <option value="text">Text</option>
-            <option value="imageAndText">Image and text</option>
+            {Object.keys(contentTypes).map((contentType, i) => {
+              return (
+                <option value={contentType} key={i}>
+                  {contentTypes[contentType]}
+                </option>
+              );
+            })}
           </select>
         )}
         {this.renderWidgetControl()}

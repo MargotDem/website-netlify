@@ -3,6 +3,7 @@ services:
   node:
     build:
       context: .
+      dockerfile: Dockerfile.local
       target: develop
     volumes:
       - ${PWD}/src/:/home/node/app/src/

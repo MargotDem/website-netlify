@@ -11,7 +11,7 @@ export default function withMainLayout(WrappedComponent) {
       <Global>
         <div className="main-layout">
           <Header />
-          <div className="main-content columns">
+          <div className="main-content">
             <div className="column is-10 is-offset-1">
               <WrappedComponent {...props} />
             </div>

@@ -1,0 +1,41 @@
+.home-title {
+    margin: 30px 0px;
+}
+
+.home-description {
+    margin-bottom: 40px;
+    h2 {
+        font-weight: 600;
+    }
+}
+
+.home-contact {
+    margin-bottom: 30px;
+    @include until($tabletPortraitBreakpoint) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }    
+}
+
+.home-contact-input, .home-contact-button {
+    width: 100%;
+    @include until($tabletPortraitBreakpoint) {
+        width: 60%;
+    }
+    @include until($mobileBreakpoint) {
+        width: 100%;
+    }
+}
+
+.home-contact-input {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.home-beta {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+

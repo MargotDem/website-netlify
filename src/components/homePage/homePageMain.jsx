@@ -3,14 +3,14 @@ import React from "react";
 const HomePageMain = () => (
   <section className="section">
     <div className="container has-text-centered">
-      <div className="columns">
-        <div className="column is-12 is-10-desktop is-offset-1-desktop home-title">
-          <h1>egrdtfLe Cloud Computing dans son plus simple appareil</h1>
+      <div className="columns is-centered">
+        <div className="column is-10-desktop home-title">
+          <h1>Le Cloud Computing dans son plus simple appareil</h1>
         </div>
       </div>
 
-      <div className="columns">
-        <div className="column is-12-mobile is-8-desktop is-offset-2-desktop is-10-tablet is-offset-1-tablet home-description">
+      <div className="columns is-centered">
+        <div className="column is-8-desktop is-10-tablet home-description">
           <h2>
             Nua.ge est une offre cloud épurée de type IaaS, pensée pour des
             utilisateurs exigeants et pragmatiques pour qui la complexité n’est
@@ -19,8 +19,8 @@ const HomePageMain = () => (
         </div>
       </div>
 
-      <div className="columns">
-        <div className="column is-one-third-tablet is-offset-4-tablet is-half-mobile is-offset-3-mobile home-contact">
+      <div className="columns is-centered">
+        <div className="column is-4-desktop is-5-tablet home-contact">
           <input
             className="input home-contact-input"
             type="text"
@@ -32,8 +32,8 @@ const HomePageMain = () => (
         </div>
       </div>
 
-      <div className="columns">
-        <div className="column is-12-mobile is-8-desktop is-offset-2-desktop is-10-tablet is-offset-1-tablet home-beta">
+      <div className="columns is-centered">
+        <div className="column is-8-desktop is-10-tablet home-beta">
           <p>
             Notre solution est actuellement en beta test. Vous souhaitez
             recevoir une invitation ? Faites partie de notre communauté de
