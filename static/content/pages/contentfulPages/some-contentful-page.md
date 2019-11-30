@@ -20,25 +20,21 @@ contents:
 
           With a [link](https://bulma.io/documentation/form/input/)
         image:
-          imageAlt: a moutain
+          imageAlt: a moutain!!
           imagePath: /images/mountain.jpeg
         title: First content of page
   - contentTypesWidget:
       text:
         text: 'This is the second content, a simple text. Lalala.'
         title: Second content of page
-  - contentTypesWidget:
-      imageAndText:
-        image:
-          imageAlt: a flower
-          imagePath: /images/flower.jpeg
-        text: flower flower. text text
+  - contentTypesWidget: {}
   - contentTypesWidget:
       simpleContent:
         description: Hello there.
         image:
-          imageAlt: grass
+          imageAlt: grasssss
           imagePath: /images/grass.jpeg
         title: Third content of page
-lastmod: '2019-11-29'
+lastmod: '2019-11-30'
 ---
+
