@@ -25,15 +25,19 @@ contents:
       text:
         text: 'This is the second content, a simple text. Lalala.'
         title: Second content of page
-  - contentTypesWidget:
-      imageAndText:
-        image: /images/flower.jpeg
-        text: flower flower. text text
+  - contentTypesWidget: {}
   - contentTypesWidget:
       simpleContent:
         description: Hello there.
         image: /images/grass.jpeg
         title: Third content of page
-lastmod: '2019-11-29'
+  - contentTypesWidget:
+      simpleContent:
+        description: The content description
+        image:
+          imageAlt: some yellow sand
+          imagePath: /images/sand.jpeg
+        title: Yet another content
+lastmod: '2019-11-30'
 ---
 
