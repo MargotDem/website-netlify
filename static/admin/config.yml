@@ -41,10 +41,13 @@ collections:
               fields:
                 - { name: title, label: Title }
                 - { name: description, label: Description, widget: markdown }
-                - label: "Image"
-                  name: "image"
-                  widget: "image"
+                - name: "image"
+                  label: "Image"
+                  widget: "object"
                   required: false
+                  fields:
+                    - { name: "imagePath", label: "Image Path", widget: "image" }
+                    - { name: "imageAlt", label: "Image Alt", widget: "string" }
             - name: "text"
               label: "Text"
               widget: "object"
