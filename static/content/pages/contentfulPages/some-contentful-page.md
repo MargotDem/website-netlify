@@ -6,7 +6,7 @@ metaData:
     imagePath: /images/nuage-social-share-image.png
   openGraphType: website
   path: /some-contentful-page
-  title: Some Contentful Pagee
+  title: Some Contentful Page
   twitterCard: summary
 pageType: contentfulPage
 title: Some Contentful Page
@@ -20,21 +20,25 @@ contents:
 
           With a [link](https://bulma.io/documentation/form/input/)
         image:
-          imageAlt: a moutain!!
+          imageAlt: a moutain
           imagePath: /images/mountain.jpeg
         title: First content of page
   - contentTypesWidget:
       text:
         text: 'This is the second content, a simple text. Lalala.'
         title: Second content of page
-  - contentTypesWidget: {}
+  - contentTypesWidget:
+      imageAndText:
+        image:
+          imageAlt: a flower
+          imagePath: /images/flower.jpeg
+        text: flower flower. text text
   - contentTypesWidget:
       simpleContent:
         description: Hello there.
         image:
-          imageAlt: grasssss
+          imageAlt: grass
           imagePath: /images/grass.jpeg
         title: Third content of page
-lastmod: '2019-12-02'
+lastmod: '2019-11-29'
 ---
-

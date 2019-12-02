@@ -9,6 +9,7 @@ collections:
     folder: "/static/content/pages/contentfulPages"
     create: true
     fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - name: "metaData"
         label: "Meta Data"
         widget: "object"
@@ -60,6 +61,7 @@ collections:
     folder: "/static/content/pages/simplePages"
     create: true
     fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - name: "metaData"
         label: "Meta Data"
         widget: "object"
