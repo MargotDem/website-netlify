@@ -1,4 +1,5 @@
 ---
+draft: true
 metaData:
   description: A page with some contents.
   image:
