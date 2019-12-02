@@ -6,7 +6,7 @@ metaData:
     imagePath: /images/nuage-social-share-image.png
   openGraphType: website
   path: /some-contentful-page
-  title: Some Contentful Page
+  title: Some Contentful Pagee
   twitterCard: summary
 pageType: contentfulPage
 title: Some Contentful Page
@@ -35,6 +35,6 @@ contents:
           imageAlt: grasssss
           imagePath: /images/grass.jpeg
         title: Third content of page
-lastmod: '2019-11-30'
+lastmod: '2019-12-02'
 ---
 
