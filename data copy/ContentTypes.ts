@@ -3,4 +3,4 @@ const contentTypes = {
   text: "Text"
 };
 
-module.exports = contentTypes;
+export default contentTypes;

@@ -5,7 +5,7 @@ include:
     file: '/templates/nginx-website/nginx.gitlab-ci.yml'
 
 variables:
-  REVIEW_LAB_ENABLED: 1
+  REVIEW_LAB_ENABLED: 0
 
 staging:
   stage: deploy

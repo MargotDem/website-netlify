@@ -3,8 +3,8 @@ draft: true
 metaData:
   description: A page with some contents.
   image:
-    imageAlt: nuage social share image alt
-    imagePath: /images/nuage-social-share-image.png
+    imageAlt: the sky
+    imagePath: /images/sky.jpeg
   openGraphType: website
   path: /some-contentful-page
   title: Some Contentful Page
@@ -29,17 +29,12 @@ contents:
         text: 'This is the second content, a simple text. Lalala.'
         title: Second content of page
   - contentTypesWidget:
-      imageAndText:
-        image:
-          imageAlt: a flower
-          imagePath: /images/flower.jpeg
-        text: flower flower. text text
-  - contentTypesWidget:
       simpleContent:
         description: Hello there.
         image:
           imageAlt: grass
           imagePath: /images/grass.jpeg
         title: Third content of page
-lastmod: '2019-11-29'
+lastmod: '2019-11-30'
 ---
+

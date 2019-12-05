@@ -2,13 +2,12 @@ import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 
-const Global = props => {
+const Global: React.FunctionComponent = props => {
   return (
     <>
       <Helmet>
         <html lang="fr" />
         <meta charSet="utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="HandheldFriendly" content="True" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="no-referrer-when-downgrade" />

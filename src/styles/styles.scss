@@ -1,38 +1,99 @@
 @charset "utf-8";
 
 $title-color: black;
+$aqua: #1cc6d9;
+$purple: #8d1cd9;
+$globalWhite: white;
 
 $mobileBreakpoint: 426px;
 $tabletPortraitBreakpoint: 769px;
 
+
+
+// $midTabletBreakpoint: 500px;
+// $smallMobileBreakpoint: 319px;
+
+$container-offset: 24px;
+
 @import "~bulma/bulma.sass";
+
 
 @import "./header.scss";
 @import "./footer.scss";
 @import "./errorPage.scss";
 @import "./contentfulPages.scss";
+@import "./simplePages.scss";
 @import "./homePage.scss";
+@import "./buttons.scss";
+
+@font-face {
+    font-family: "Noah";
+    src: url("../../static/fonts/Noah-Regular.eot");
+    src: url("../../static/fonts/Noah-Regular.woff") format("woff"), url("../../static/fonts/Noah-Regular.otf") format("opentype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Noah";
+    src: url("../../static/fonts/Noah-Bold.eot");
+    src: url("../../static/fonts/Noah-Bold.woff") format("woff"), url("../../static/fonts/Noah-Bold.otf") format("opentype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Noah";
+    src: url("../../static/fonts/Noah-RegularItalic.eot");
+    src: url("../../static/fonts/Noah-RegularItalic.woff") format("woff"), url("../../static/fonts/Noah-RegularItalic.otf") format("opentype");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Noah";
+    src: url("../../static/fonts/Noah-BoldItalic.eot");
+    src: url("../../static/fonts/Noah-BoldItalic.woff") format("woff"), url("../../static/fonts/Noah-Regular.otf") format("opentype");
+    font-weight: bold;
+    font-style: italic;
+}
 
 .main-layout {
-    display: flex;
+  display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: "Noah";
+  font-style: normal;
+  background-color: $aqua;
+  position: relative;
 }
 
 .main-content {
     flex: 1;
 }
 
-h1 {
+h1, .is-h1 {
     font-size: 3rem;
 }
 
-h2 {
+h2, .is-h2 {
+    font-size: 2.5rem;
+}
+
+h3, .is-h3 {
+    font-size: 2rem;
+}
+
+h4, .is-h4 {
     font-size: 1.5rem;
 }
 
-h3 {
-    font-size: 1.3rem;
+h5, .is-h5 {
+    font-size: 1.25rem;
 }
 
+h6, .is-h5 {
+    font-size: 1rem;
+}
 
+a {
+    text-decoration: underline;
+    color: $purple;
+}

@@ -1,15 +1,25 @@
 import React from "react";
-import HomePageMain from "../components/homePage/homePageMain";
+import HomePage from "../components/homePage";
 import SEO from "../components/SEO";
 import withMainLayout from "../templates/mainLayout";
 
-const IndexPage = props => {
+const IndexPage = () => {
   return (
     <>
       <SEO data={{}} />
-      <HomePageMain />
+      <HomePage />
     </>
   );
 };
 
-export default withMainLayout(IndexPage);
+const options = {
+  header: {
+    dontShowLogo: true,
+    showLoginButton: true
+  },
+  footer: {
+    showFooter: true
+  }
+};
+
+export default withMainLayout(IndexPage, options);

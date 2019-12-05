@@ -1,12 +1,19 @@
 .navbar {
+    padding-top: 16px;
     a {
         color: white;
         font-weight: 600;
     }
+
+    background-color: transparent;
 
     .navbar-dropdown {
         a {
             color:rgb(51, 51, 51);
         }
     }
+}
+
+.navbar-logo {
+    max-height: 3rem!important;
 }

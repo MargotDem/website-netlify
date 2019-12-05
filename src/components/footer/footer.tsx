@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
 import utils from "../../lib/utils";
+import { FooterSection } from "../../types/types";
+import { FooterOptionsProps } from "./index";
 
-const renderSection = section => (
+interface FooterProps {
+  footer: FooterSection[];
+}
+
+const renderSection = (section: FooterSection) => (
   <>
     <div className="section-title">
       <strong>{section.title}</strong>
@@ -28,7 +34,7 @@ const renderSection = section => (
   </>
 );
 
-const renderSections = sections => (
+const renderSections = (sections: FooterSection[]) => (
   <>
     {sections.map((section, i: number) => (
       <div className="column is-3" key={i}>
@@ -38,22 +44,33 @@ const renderSections = sections => (
   </>
 );
 
-const Footer = ({ footer }) => {
-  return (
-    <footer className="footer">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-two-fifths">Copyright stuff</div>
-          <div className="column">
-            <div className="columns">
-              <div className="column" />
-              {renderSections(footer)}
+const Footer = ({ footer, showFooter }: FooterProps & FooterOptionsProps) => {
+  if (showFooter) {
+    return (
+      <footer className="footer">
+        <div className="container has-text-centered">
+          <Link to="/mentions-legales">Mentions légales</Link>
+          {/* 
+          
+            footer V2:
+
+          <div className="columns is-centered">
+            <div className="column is-1">
+              hola
             </div>
-          </div>
+            <div className="column is-two-fifths">Copyright stuff</div>
+            <div className="column">
+              <div className="columns">
+                <div className="column" />
+                {renderSections(footer)}
+              </div>
+            </div>
+          </div> */}
         </div>
-      </div>
-    </footer>
-  );
+      </footer>
+    );
+  }
+  return null;
 };
 
 export default Footer;

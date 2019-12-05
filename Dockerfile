@@ -28,6 +28,7 @@ COPY package*.json ./
 COPY .eslintrc.js ./
 COPY tsconfig.json ./
 COPY gatsby-config.js ./
+COPY gatsby-config.esm.js ./
 COPY gatsby-node.js ./
 COPY data/ ./data/
 

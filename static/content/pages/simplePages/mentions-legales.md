@@ -1,4 +1,5 @@
 ---
+draft: false
 metaData:
   description: Nos mentions légales sont les suivantes
   image:

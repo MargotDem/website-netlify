@@ -1,6 +1,40 @@
 .error-page {
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Noah";
+  font-style: normal;
+}
+
+.error-page-content-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: $aqua;
+    font-size: 20px;
+    div, strong, a {
+        color: $globalWhite;
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+.error-page-content {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: space-between;
+    align-items: center;
+    div {
+        text-align: center;
+    }
+    .error-title {
+        font-size: 4rem;
+    }
+    .error-text {
+        margin-bottom: 1.5rem;
+    }
 }

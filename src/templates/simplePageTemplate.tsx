@@ -3,14 +3,15 @@ import { graphql } from "gatsby";
 
 import withMainLayout from "./mainLayout";
 import SEO from "../components/SEO";
+import { SimplePageQueryResult } from "../types/types";
 
-const SimplePageTemplate = ({ data }) => {
+const SimplePageTemplate = ({ data }: { data: SimplePageQueryResult }) => {
   const { markdownRemark } = data;
   const { html } = markdownRemark;
   return (
     <>
       <SEO data={markdownRemark.frontmatter.metaData} />
-      <section className="section">
+      <section className="section simple-page">
         <div className="container">
           <div
             className="markdown"
@@ -43,4 +44,14 @@ export const pageQuery = graphql`
   }
 `;
 
-export default withMainLayout(SimplePageTemplate);
+const options = {
+  header: {
+    dontShowLogo: false,
+    showLoginButton: true
+  },
+  footer: {
+    showFooter: false
+  }
+};
+
+export default withMainLayout(SimplePageTemplate, options);

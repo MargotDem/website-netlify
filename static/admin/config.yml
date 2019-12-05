@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: MargotDem/website-netlify
+  name: gitlab
 media_folder: "static/images"
 public_folder: "/images"
 collections:

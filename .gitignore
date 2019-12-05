@@ -43,6 +43,3 @@ public
 
 #
 .idea/
-
-# dev test pages
-static/content/pages/devPages

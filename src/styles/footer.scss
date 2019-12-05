@@ -1,9 +1,10 @@
 
 .footer {
-    background-color: #3298dc;
+    background-color: $aqua;
     .section-title {
         margin-bottom: 10px;
     }
+    padding: 0rem 0rem 1rem;
 }
 
 .footer, .footer a, .footer strong {

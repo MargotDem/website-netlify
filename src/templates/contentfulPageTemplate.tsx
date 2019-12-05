@@ -5,14 +5,23 @@ import withMainLayout from "./mainLayout";
 import SEO from "../components/SEO";
 import SimpleContent from "../components/contents/simpleContent";
 import Text from "../components/contents/text";
+import {
+  ContentfulPageQueryResult,
+  SimpleContentType,
+  TextType
+} from "../types/types";
 
-const SimplePageTemplate = ({ data }) => {
+const SimplePageTemplate = ({ data }: { data: ContentfulPageQueryResult }) => {
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
 
-  function displayContent(content) {
+  function displayContent(content: {
+    simpleContent?: SimpleContentType;
+    text?: TextType;
+  }) {
     let contentType;
     for (const property in content) {
+      //@ts-ignore
       if (content[property]) {
         contentType = property;
         break;
@@ -20,13 +29,16 @@ const SimplePageTemplate = ({ data }) => {
     }
     switch (contentType) {
       case "simpleContent":
-        return <SimpleContent content={content[contentType]} />;
+        return (
+          <SimpleContent content={content[contentType] as SimpleContentType} />
+        );
       case "text":
-        return <Text content={content[contentType]} />;
+        return <Text content={content[contentType] as TextType} />;
       default:
         return <div>(unknown content type)</div>;
     }
   }
+
   return (
     <div>
       <SEO data={markdownRemark.frontmatter.metaData} />
@@ -73,4 +85,14 @@ export const pageQuery = graphql`
   }
 `;
 
-export default withMainLayout(SimplePageTemplate);
+const options = {
+  header: {
+    dontShowLogo: false,
+    showLoginButton: false
+  },
+  footer: {
+    showFooter: true
+  }
+};
+
+export default withMainLayout(SimplePageTemplate, options);

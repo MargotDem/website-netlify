@@ -1,9 +1,14 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Footer from "./footer";
+import { FooterQueryResult } from "../../types/types";
 
-const Index = () => {
-  const data = useStaticQuery(graphql`
+export interface FooterOptionsProps {
+  showFooter: boolean;
+}
+
+const Index = (props: FooterOptionsProps) => {
+  const data: FooterQueryResult = useStaticQuery(graphql`
     query FooterQuery {
       markdownRemark(frontmatter: { title: { eq: "Footer" } }) {
         frontmatter {
@@ -21,7 +26,7 @@ const Index = () => {
 
   const footer = data.markdownRemark.frontmatter.sections;
 
-  return <Footer footer={footer} />;
+  return <Footer footer={footer} showFooter={props.showFooter} />;
 };
 
 export default Index;

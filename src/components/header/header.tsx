@@ -1,72 +1,23 @@
 import React from "react";
 import { Link } from "gatsby";
 import utils from "../../lib/utils";
+import { HeaderSection, Link as LinkType } from "../../types/types";
+import { HeaderOptionsProps } from "./index";
 
-const Header = ({ header }) => (
-  <nav
-    className="navbar is-transparent"
-    role="navigation"
-    aria-label="main navigation"
-  >
-    <div className="container">
-      <div className="navbar-brand">
-        <a className="navbar-item" href="../">
-          <img src="/icon.png" alt="Logo" />
-        </a>
+interface DropdownSection {
+  title: string;
+  links: LinkType[];
+}
 
-        <a
-          role="button"
-          className="navbar-burger burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarMenu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+interface HeaderProps {
+  header: HeaderSection[];
+}
 
-      {/* <div id="navbarMenu" className="navbar-menu">
-        <div className="navbar-start">{renderSections(header)}</div>
-      </div> */}
-    </div>
-  </nav>
-);
-
-const renderSections = sections => (
-  <>
-    {sections.map((section, i: number) => {
-      if (isDropdown(section)) return renderDropdown(section, i);
-
-      if (utils.isExternalLink(section.linkPath)) {
-        return (
-          <a
-            className="navbar-item"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={section.linkPath}
-            key={i}
-          >
-            {section.title}
-          </a>
-        );
-      }
-
-      return (
-        <a className="navbar-item" key={i}>
-          <Link to={section.linkPath}>{section.title}</Link>
-        </a>
-      );
-    })}
-  </>
-);
-
-function isDropdown(section) {
+function isDropdown(section: HeaderSection) {
   return section.links;
 }
 
-const renderDropdown = (section, j: number) => (
+const renderDropdown = (section: DropdownSection, j: number) => (
   <div className="navbar-item has-dropdown is-hoverable" key={j}>
     <a className="navbar-link">{section.title}</a>
     <div className="navbar-dropdown">
@@ -92,6 +43,83 @@ const renderDropdown = (section, j: number) => (
       })}
     </div>
   </div>
+);
+
+const renderSections = (sections: HeaderSection[]) => (
+  <>
+    {sections.map((section, i: number) => {
+      if (isDropdown(section))
+        return renderDropdown(section as DropdownSection, i);
+
+      if (utils.isExternalLink(section.linkPath as string)) {
+        return (
+          <a
+            className="navbar-item"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={section.linkPath}
+            key={i}
+          >
+            {section.title}
+          </a>
+        );
+      }
+
+      return (
+        <a className="navbar-item" key={i}>
+          <Link to={section.linkPath as string}>{section.title}</Link>
+        </a>
+      );
+    })}
+  </>
+);
+
+const Header = ({
+  header,
+  dontShowLogo,
+  showLoginButton
+}: HeaderProps & HeaderOptionsProps) => (
+  <nav
+    className="navbar is-transparent"
+    role="navigation"
+    aria-label="main navigation"
+  >
+    <div className="container">
+      {!dontShowLogo && (
+        <div className="navbar-brand">
+          <a className="navbar-item" href="/">
+            <img src="/logo-fond-bleu.svg" alt="Logo" className="navbar-logo" />
+          </a>
+
+          {/* <a
+          role="button"
+          className="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarMenu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a> */}
+        </div>
+      )}
+
+      <div id="navbarMenu" className="navbar-menu">
+        {/* render left navbar links: */}
+        {/* <div className="navbar-start">{renderSections(header)}</div> */}
+        {showLoginButton && (
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                <a className="button is-transparent-button">Se connecter</a>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </nav>
 );
 
 export default Header;

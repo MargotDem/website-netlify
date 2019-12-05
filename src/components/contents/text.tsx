@@ -1,6 +1,7 @@
 import React from "react";
+import { TextType } from "../../types/types";
 
-const Text = ({ content }) => {
+const Text = ({ content }: { content: TextType }) => {
   return (
     <div className="container has-text-centered text-content">
       <div className="columns">
