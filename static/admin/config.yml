@@ -1,11 +1,6 @@
 backend:
-  name: gitlab
-  repo: 523
-  auth_type: implicit
-  app_id: 3b1d34311a4b504d0fe9a68050b184a4b893076a5ff9df6366e5516d7da6bc64
-  api_root: https://git.ci.oxv.fr/api/v4
-  base_url: https://git.ci.oxv.fr
-  auth_endpoint: oauth/authorize
+  name: github
+  repo: MargotDem/website-netlify
 media_folder: "static/images"
 public_folder: "/images"
 collections:
