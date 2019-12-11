@@ -1,6 +1,7 @@
 .home-page {
-    color: $globalWhite;
+    color: $white;
     padding: 0rem 1.5rem;
+    position: relative;
 }
 
 .Blob-1 {
@@ -33,10 +34,11 @@
     justify-content: center;
     height: 6.5rem;
     @include until($tabletPortraitBreakpoint) {
-      height: 7rem;
+      height: 6rem;
     }
     @include until($mobileBreakpoint) {
-      height: 4.3rem;
+      height: 4rem;
+      margin: 0px 0px 30px 0px;
     }
   }
 
@@ -65,7 +67,7 @@
 
 #blob-path {
   shape-rendering: crispEdges;
-  fill: $globalWhite;
+  fill: $white;
 }
 
 .static-logo {
@@ -123,27 +125,38 @@
 .home-contact {
     padding: 0px;
     margin-top: 12px;
-    margin-bottom: 20px;
+    height: 120px;
     @include until($tabletPortraitBreakpoint) {
-      #sib-form {
+      .home-contact-form {
         padding-top: 12px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        #sib-form {
+          width: 100%;
+        }
       }
     }    
 }
 
 .home-contact-input, .home-contact-button {
-    width: 100%;
-    height: 45px;
-    @include until($tabletPortraitBreakpoint) {
-        width: 50%;
-    }
-    @include until($mobileBreakpoint) {
-        width: 100%;
-    }
+  height: 45px;
+  @include from($midLaptopBreakpoint) {
+    width: 25%;
+  }
+  @include until($midLaptopBreakpoint) {
+    width: 35%;
+  }
+  @include until($tabletLandscapeBreakpoint) {
+    width: 45%;
+  }
+  @include until($tabletPortraitBreakpoint) {
+      width: 65%;
+  }
+  @include until($mobileBreakpoint) {
+      width: 100%;
+  }
 }
 
 .home-contact-input {
@@ -154,92 +167,180 @@
     border: none;
 }
 
-.home-contact-button {
-    color: $globalWhite;
-    font-size: 1.2rem;
-    background-color: $purple;
-    outline: 0px!important;
-    font-weight: bold;
-    &:hover {
-        color:lightgray;
-    }
-    &:focus {
-        color:lightgray;
-        outline: none!important;
-        border-color: transparent!important;
-    }
-}
-
-
-
 .home-beta {
     margin-bottom: 5rem;
 }
 
 
 
-/* contact form send in blue */
+/* contact form */
 
-
-@font-face {
-  font-display: block;
-  font-family: Roboto;
-  src: url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+.error-message-container {
+  display: flex;
+  justify-content: center;
 }
 
-@font-face {
-  font-display: fallback;
-  font-family: Roboto;
-  font-weight: 600;
-  src: url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+.error-message {
+  position: absolute;
+  width: 100vw;
 }
 
-@font-face {
-  font-display: fallback;
-  font-family: Roboto;
-  font-weight: 700;
-  src: url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+.home-contact-form {
+  transition: 1s;
+  opacity: 1;
+	visibility: visible;
 }
 
-#sib-container input:-ms-input-placeholder {
-  text-align: left;
-  font-family: "Helvetica", sans-serif;
-  color: #c0ccda;
-  border-width: px;
+.home-contact-form_hide {
+	opacity: 0;
+  visibility: hidden;
 }
 
-#sib-container input::placeholder {
-  text-align: left;
-  font-family: "Helvetica", sans-serif;
-  color: #c0ccda;
-  border-width: px;
+.home-contact-message {
+  transition: 2s;
+	opacity: 0;
+  visibility: hidden;
+  position: relative;
+  bottom: 45%;
+  font-size: 1.2rem;
 }
 
-.sib-form {
+.home-contact-message_show {
+  opacity: 1;
+	visibility: visible;
+}
+
+.input--hidden {
+  display: none;
+}
+
+/* home section */
+
+
+.home-section {
+  padding: 4.5rem 0rem 5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $black;
+    margin-bottom: 1rem;
+  }
+}
+
+.home-section-top {
   text-align: center;
-       background-color: transparent;
+  margin-bottom: 1.5rem;
+
 }
 
-.sib-form-message-panel {
-  font-size:16px; text-align:left; font-family:"Helvetica", sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-width:px; border-color:#ff4949;max-width:540px; border-width:px;
+.home-section-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
-.sib-form-message-panel {
-  font-size:16px; text-align:left; font-family:"Helvetica", sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-width:px; border-color:#13ce66;max-width:540px; border-width:px;
+.home-section-bottom-fundamentals {
+  display: flex;
 }
 
-.sib-container {
-  text-align:center; background-color:rgba(53,212,229,1); max-width:540px; border-width:0px; border-color:#1cc6d9; border-style:solid;
+.home-section-bottom-fundamentals p, .home-section-bottom-buttons button {
+  width: 14rem;
+  margin: 0px 12px;
 }
 
-.entry__error {
-  font-size:16px; text-align:left; font-family:"Helvetica", sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-width:px; border-color:#ff4949;
+.home-section-bottom-buttons {
+  margin-top: 1rem;
 }
 
-.sib-form-block__button {
-  font-size:16px; text-align:center; font-family:"Helvetica", sans-serif; color:#FFFFFF; background-color:#03007c; border-radius:4px; border-width:0px;
+/* presentation */
+
+.presentation-container, .fundamentals-container {
+  background-color: $white;
 }
 
-.sib-form-block {
-  font-size:14px; text-align:center; font-family:"Helvetica", sans-serif; color:#333; background-color:transparent; border-width:px;
+.functionalities-container {
+  background-color: $greyBackground;
+}
+
+.presentation-image {
+    width: 50rem;
+    height: 38rem;
+    box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 45% 65% 40% 60% / 40% 40% 60% 60%;
+    @include until($tabletPortraitBreakpoint) {
+      width: 25rem;
+    height: 16rem;
+  }
+  @include until($mobileBreakpoint) {
+    width: 20rem;
+    height: 12rem;
+  }
+}
+
+
+.fundamentals-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  .fundamentals-column {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $black;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.fundamentals-icon {
+  font-size: 3rem;
+  color: $purple;
+}
+
+.functionalities-slides {
+  display: flex;
+  height: 480px;
+}
+
+.message-header {
+  color: $black;
+  a {
+    text-decoration: none!important;
+    font-size: 1.1rem;
+  }
+  padding: 0rem 1rem!important;
+}
+
+.message-body, .message-header {
+  background-color: $greyBackground;
+}
+
+.message-body-content {
+  padding: 0.8rem 0rem 0rem 1rem!important;
+}
+
+.message, .message-header, .message-body {
+  border-radius: 0px;
+}
+
+.is-active-message {
+  border-left: solid 3px $purple;
+}
+
+.functionalities-tabs {
+  padding-top: 1.5rem;
+}
+
+.functionalities-image {
+  img {
+    border-radius: 4px;
+  }
 }

@@ -1,7 +1,8 @@
 const config = {
   siteTitle: "Nua.ge",
   siteTitleShort: "Nua.ge",
-  siteDescription: "Le Cloud Public dans son plus simple appareil",
+  siteDescription:
+    "Nua.ge est une offre cloud épurée de type IaaS, pensée pour des utilisateurs exigeants et pragmatiques pour qui la complexité n’est pas synonyme de performances.",
   siteUrl: "https://nua.ge",
   backgroundColor: "#1cc6d9",
   themeColor: "#ffffff",

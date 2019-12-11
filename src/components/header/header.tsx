@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import utils from "../../lib/utils";
 import { HeaderSection, Link as LinkType } from "../../types/types";
 import { HeaderOptionsProps } from "./index";
@@ -112,7 +112,12 @@ const Header = ({
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-transparent-button">Se connecter</a>
+                <button
+                  className="transparent-button"
+                  onClick={() => navigate("/login")}
+                >
+                  Se connecter
+                </button>
               </div>
             </div>
           </div>

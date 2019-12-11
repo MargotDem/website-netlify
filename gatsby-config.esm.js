@@ -22,6 +22,7 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+        enableIdentityWidget: false,
       },
     },
     "gatsby-remark-source-name",
@@ -50,6 +51,7 @@ module.exports = {
         exclude: [
           `/404`,
           `/404.html`,
+          `/login`,
         ],
         serialize: ({ site, allSitePage }) => {
           return (allSitePage.edges.map(edge => {

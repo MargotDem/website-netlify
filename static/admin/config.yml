@@ -1,6 +1,11 @@
 backend:
-  name: github
-  repo: MargotDem/website-netlify
+  name: gitlab
+  repo: 523
+  auth_type: implicit
+  app_id: 3b1d34311a4b504d0fe9a68050b184a4b893076a5ff9df6366e5516d7da6bc64
+  api_root: https://git.ci.oxv.fr/api/v4
+  base_url: https://git.ci.oxv.fr
+  auth_endpoint: oauth/authorize
 media_folder: "static/images"
 public_folder: "/images"
 collections:
@@ -22,8 +27,8 @@ collections:
             widget: "object"
             required: false
             fields:
-              - { name: "imagePath", label: "Image Path", widget: "image" }
-              - { name: "imageAlt", label: "Image Alt", widget: "string" }
+              - { name: "imagePath", label: "Image Path", widget: "image", required: false }
+              - { name: "imageAlt", label: "Image Alt", widget: "string", required: false }
           - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
           - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
       - {label: "Page Type", name: "pageType", widget: "hidden", default: "contentfulPage"}
@@ -47,8 +52,8 @@ collections:
                   widget: "object"
                   required: false
                   fields:
-                    - { name: "imagePath", label: "Image Path", widget: "image" }
-                    - { name: "imageAlt", label: "Image Alt", widget: "string" }
+                    - { name: "imagePath", label: "Image Path", widget: "image", required: false }
+                    - { name: "imageAlt", label: "Image Alt", widget: "string", required: false }
             - name: "text"
               label: "Text"
               widget: "object"
@@ -74,8 +79,8 @@ collections:
             widget: "object"
             required: false
             fields:
-              - { name: "imagePath", label: "Image Path", widget: "image" }
-              - { name: "imageAlt", label: "Image Alt", widget: "string" }
+              - { name: "imagePath", label: "Image Path", widget: "image", required: false }
+              - { name: "imageAlt", label: "Image Alt", widget: "string", required: false }
           - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
           - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
       - {label: "Page Type", name: "pageType", widget: "hidden", default: "simplePage"}

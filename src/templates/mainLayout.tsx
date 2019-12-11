@@ -22,9 +22,7 @@ const withMainLayout = <P extends object>(
               showLoginButton={options.header.showLoginButton}
             />
             <div className="main-content">
-              <div className="column is-10 is-offset-1">
-                <WrappedComponent {...(this.props as P)} />
-              </div>
+              <WrappedComponent {...(this.props as P)} />
             </div>
             <Footer showFooter={options.footer.showFooter} />
           </div>

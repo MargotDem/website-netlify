@@ -47,27 +47,43 @@ const renderSections = (sections: FooterSection[]) => (
 const Footer = ({ footer, showFooter }: FooterProps & FooterOptionsProps) => {
   if (showFooter) {
     return (
-      <footer className="footer">
-        <div className="container has-text-centered">
-          <Link to="/mentions-legales">Mentions légales</Link>
-          {/* 
-          
-            footer V2:
+      // <footer className="footer">
+      //   <div className="container has-text-centered">
+      //     <Link to="/mentions-legales">Mentions légales</Link>
+      //     {/* 
 
-          <div className="columns is-centered">
-            <div className="column is-1">
-              hola
-            </div>
-            <div className="column is-two-fifths">Copyright stuff</div>
-            <div className="column">
-              <div className="columns">
-                <div className="column" />
-                {renderSections(footer)}
+      //       footer V2:
+
+      //     <div className="columns is-centered">
+      //       <div className="column is-1">
+      //         hola
+      //       </div>
+      //       <div className="column is-two-fifths">Copyright stuff</div>
+      //       <div className="column">
+      //         <div className="columns">
+      //           <div className="column" />
+      //           {renderSections(footer)}
+      //         </div>
+      //       </div>
+      //     </div> */}
+      //   </div>
+      // </footer>
+
+      <section className="section">
+        <footer className="footer">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-two-fifths">Copyright stuff</div>
+              <div className="column">
+                <div className="columns">
+                  <div className="column" />
+                  {renderSections(footer)}
+                </div>
               </div>
             </div>
-          </div> */}
-        </div>
-      </footer>
+          </div>
+        </footer>
+      </section>
     );
   }
   return null;

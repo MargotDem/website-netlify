@@ -1,18 +1,68 @@
-.button {
-    padding-left: 25px;
-    padding-right: 25px;
-    border: none;
+button {
+    border: none!important;
+    border-radius: 4px;
+    padding: 10px 25px;
     font-family: "Noah";
     font-size: 18px;
     text-decoration: none;
-}
-
-.is-transparent-button {
-    background-color: transparent;
-    border: solid 2px $globalWhite;
-    color: $globalWhite;
+    font-weight: bold;
     &:hover {
-        color:lightgray;
-        border: solid 2px lightgray;
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none!important;
     }
 }
+
+.transparent-button {
+    background-color: transparent;
+    border: solid 2px $white!important;
+    color: $white;
+    &:hover {
+        color:$hoverWhite;
+        border: solid 2px $hoverWhite!important;
+    }
+    &:focus {
+        color: $activeWhite;
+        border: solid 2px $activeWhite!important;
+    }
+}
+
+.transparent-button-disabled {
+    border: solid 2px $disabledWhite;
+}
+
+.transparent-purple-button {
+    border: solid 2px $purple!important;
+    color: $purple;
+    &:hover {
+        color: $hoverPurple;
+        border: solid 2px $hoverPurple!important;
+    }
+    &:focus {
+        color: $activePurple;
+        border: solid 2px $activePurple!important;
+    }
+}
+
+.purple-button {
+    color: $white;
+    background-color: $purple;
+    &:hover {
+        color: $white;
+        background-color: $hoverPurple;
+    }
+    &:focus {
+        color: $white;
+        background-color: $activePurple;
+    }
+}
+
+.purple-button-disabled {
+    background-color: $disabledPurple!important;
+  }
+
+  .transparent-button-disabled, .purple-button-disabled {
+    color: $disabledWhite!important;
+    cursor: unset!important;
+  }

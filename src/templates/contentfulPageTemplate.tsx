@@ -40,7 +40,7 @@ const SimplePageTemplate = ({ data }: { data: ContentfulPageQueryResult }) => {
   }
 
   return (
-    <div>
+    <div className="column is-10 is-offset-1">
       <SEO data={markdownRemark.frontmatter.metaData} />
       {frontmatter.contents.map(({ contentTypesWidget }, i: number) => {
         return <div key={i}>{displayContent(contentTypesWidget)}</div>;

@@ -1,23 +1,17 @@
 @charset "utf-8";
 
-$title-color: black;
-$aqua: #1cc6d9;
-$purple: #8d1cd9;
-$globalWhite: white;
-
 $mobileBreakpoint: 426px;
 $tabletPortraitBreakpoint: 769px;
-
-
-
-// $midTabletBreakpoint: 500px;
-// $smallMobileBreakpoint: 319px;
+$tabletLandscapeBreakpoint: 1025px;
+$midLaptopBreakpoint: 1300px;
 
 $container-offset: 24px;
 
 @import "~bulma/bulma.sass";
 
+@import '~@creativebulma/bulma-collapsible';
 
+@import "./colors.scss";
 @import "./header.scss";
 @import "./footer.scss";
 @import "./errorPage.scss";
@@ -25,44 +19,45 @@ $container-offset: 24px;
 @import "./simplePages.scss";
 @import "./homePage.scss";
 @import "./buttons.scss";
+@import "./loginPage.scss";
 
 @font-face {
     font-family: "Noah";
-    src: url("../../static/fonts/Noah-Regular.eot");
-    src: url("../../static/fonts/Noah-Regular.woff") format("woff"), url("../../static/fonts/Noah-Regular.otf") format("opentype");
+    src: url("../../static/fonts/Noah-Regular.woff2") format("woff2"), url("../../static/fonts/Noah-Regular.woff") format("woff");
     font-style: normal;
 }
 
 @font-face {
     font-family: "Noah";
-    src: url("../../static/fonts/Noah-Bold.eot");
-    src: url("../../static/fonts/Noah-Bold.woff") format("woff"), url("../../static/fonts/Noah-Bold.otf") format("opentype");
+    src: url("../../static/fonts/Noah-Bold.woff2") format("woff2"), url("../../static/fonts/Noah-Bold.woff") format("woff");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Noah";
-    src: url("../../static/fonts/Noah-RegularItalic.eot");
-    src: url("../../static/fonts/Noah-RegularItalic.woff") format("woff"), url("../../static/fonts/Noah-RegularItalic.otf") format("opentype");
+    src: url("../../static/fonts/Noah-RegularItalic.woff2") format("woff2"), url("../../static/fonts/Noah-RegularItalic.woff") format("woff");
     font-style: italic;
 }
 
 @font-face {
     font-family: "Noah";
-    src: url("../../static/fonts/Noah-BoldItalic.eot");
-    src: url("../../static/fonts/Noah-BoldItalic.woff") format("woff"), url("../../static/fonts/Noah-Regular.otf") format("opentype");
+    src: url("../../static/fonts/Noah-BoldItalic.woff2") format("woff2"), url("../../static/fonts/Noah-BoldItalic.woff") format("woff");
     font-weight: bold;
     font-style: italic;
+}
+
+html {
+  background-color: $aqua;
 }
 
 .main-layout {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: "Noah";
+  font-family: "Noah", sans-serif;
   font-style: normal;
   background-color: $aqua;
-  position: relative;
+//   position: relative;
 }
 
 .main-content {
@@ -95,5 +90,18 @@ h6, .is-h5 {
 
 a {
     text-decoration: underline;
-    color: $purple;
+    color: $white;
+    &:hover {
+        color: $hoverWhite;
+    }
+    &:focus {
+        color: $activeWhite;
+    }
+}
+
+input {
+    border: none!important;
+    outline: none;
+    border-radius: 4px;
+    color: $black;
 }

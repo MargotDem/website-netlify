@@ -4,7 +4,6 @@
 FROM nginx:alpine
 
 COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
-
 RUN nginx -t
 
 USER nginx
@@ -64,6 +63,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
 COPY --from=build /home/node/app/public /usr/share/nginx/html
+COPY /403.html /usr/share/nginx/html/403.html
 COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 #USER nginx
@@ -78,6 +78,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
 COPY --from=build /home/node/app/public /usr/share/nginx/html
+COPY /403.html /usr/share/nginx/html/403.html
 COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 #USER nginx

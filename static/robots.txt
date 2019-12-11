@@ -2,5 +2,6 @@ User-agent: *
 Disallow: /admin/
 Disallow: /404/
 Disallow: /404.html
+Disallow: /login/
 
 Sitemap: https://nua.ge/sitemap.xml

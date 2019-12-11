@@ -1,5 +1,17 @@
-
-
 .simple-page {
-    color: $globalWhite;
+    color: $white;
+    text-align: justify;
+    h1 {
+        font-weight: bold;
+    }
+    .markdown {
+        h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 15px 0px;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+    }
 }

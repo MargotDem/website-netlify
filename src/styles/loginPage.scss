@@ -1,0 +1,95 @@
+.login-page-container {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    color: $white;
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.login-welcome {
+    font-weight: bold;
+    margin: 1.3rem 0rem 1.5rem 0rem;
+}
+
+.login-form-input {
+    font-size: 1.2rem;
+    span {
+        margin-left: 8px;
+        font-weight: bold;
+    }
+    input {
+        height: 38px;
+        width: 370px;
+        text-align: center;
+        font-style: italic;
+        font-size: 15px;
+        margin-bottom: 0.6rem;
+        @include until($tabletPortraitBreakpoint) {
+            width: 270px;
+        }
+        @include until($mobileBreakpoint) {
+            width: 200px;
+        }
+    }
+}
+
+.login-form-button {
+    height: 38px;
+    font-size: 17px;
+    padding: 8px 40px;
+}
+
+.login-label {
+    color: $activeWhite;
+    margin-bottom: 0.9rem;
+}
+
+.login-error-message-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.login-error-message {
+    position: absolute;
+}
+
+.login-organisation-message {
+    height: 0px;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    margin: 0px 20px;
+    div {
+        border-bottom: 1px solid $white;
+    }
+    p {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
+.login-organisation-message_show {
+    visibility: visible;
+    opacity: 1;
+    height: 70px;
+    @include until($tabletLandscapeBreakpoint) {
+        height: 90px;
+    }
+    @include until($mobileBreakpoint) {
+        height: 115px;
+    } 
+}

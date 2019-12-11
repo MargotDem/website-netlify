@@ -8,7 +8,7 @@ import config from "../../data/SiteConfig";
 
 import "../styles/styles.scss";
 
-const AboutPage = () => (
+const ErrorPage = () => (
   <Global>
     <Helmet>
       <meta
@@ -18,7 +18,7 @@ const AboutPage = () => (
       <title>{"Erreur 404 - " + config.siteTitle}</title>
     </Helmet>
     <div className="error-page">
-      <Header dontShowLogo={false} showLoginButton={true} />
+      <Header dontShowLogo={false} showLoginButton={false} />
       <div className="error-page-content-container">
         <div className="error-page-content">
           <div className="error-title">
@@ -39,4 +39,4 @@ const AboutPage = () => (
   </Global>
 );
 
-export default AboutPage;
+export default ErrorPage;

@@ -8,18 +8,23 @@ import { SimplePageQueryResult } from "../types/types";
 const SimplePageTemplate = ({ data }: { data: SimplePageQueryResult }) => {
   const { markdownRemark } = data;
   const { html } = markdownRemark;
+  const metaData = markdownRemark.frontmatter.metaData;
+  const title = metaData.title as string;
   return (
-    <>
-      <SEO data={markdownRemark.frontmatter.metaData} />
+    <div className="column is-10 is-offset-1">
+      <SEO data={metaData} />
       <section className="section simple-page">
-        <div className="container">
-          <div
-            className="markdown"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+        <div className="columns is-centered">
+          <div className="column is-11">
+            <h1>{title.toUpperCase()}</h1>
+            <div
+              className="markdown"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
@@ -47,7 +52,7 @@ export const pageQuery = graphql`
 const options = {
   header: {
     dontShowLogo: false,
-    showLoginButton: true
+    showLoginButton: false
   },
   footer: {
     showFooter: false
