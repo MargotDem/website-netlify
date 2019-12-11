@@ -1,5 +1,5 @@
 import React from "react";
-import Slides from "./slides";
+// import Slides from "./slides";
 
 const Functionalities = () => {
   return (
@@ -18,7 +18,7 @@ const Functionalities = () => {
         </div>
 
         <div className="functionalities-slides column is-10">
-          <Slides />
+          {/* <Slides /> */}
         </div>
 
         <div className="home-section-bottom">
