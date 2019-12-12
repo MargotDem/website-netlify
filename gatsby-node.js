@@ -35,8 +35,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       case "simplePage":
         return simplePageTemplate;
       case "feature":
-        return null;
-        // return featureTemplate;
+        // return null;
+        return featureTemplate;
       default:
         return null;
     }
@@ -58,14 +58,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const pageInfo = node.frontmatter;
     const pageType = pageInfo.pageType;
     const template = getTemplate(pageType);
-    const path = pageInfo.metaData.path;
-    const pagePath = pageType === "feature" ? `feature/${path}` : path;
+    const pagePath = pageInfo.metaData.path;
+    const fullPath = pageType === "feature" ? `feature/${pagePath}` : pagePath;
     if (template) {
       createPage({
-        path: pagePath,
+        path: fullPath,
         component: template,
         context: {
-          lastmod: pageInfo.lastmod
+          lastmod: pageInfo.lastmod,
+          pagePath: pagePath
         }
       });
     }

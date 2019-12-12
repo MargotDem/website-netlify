@@ -17,6 +17,7 @@ description: >-
   projets, sans avoir à créer une nouvelle instance.
 image:
   imagePath: /images/slide-1.png
+  imageAlt: ""
 appearsInHome: true
 lastmod: '2019-12-12'
 ---

@@ -33,8 +33,8 @@ collections:
         label: "Image"
         widget: "object"
         fields:
-          - { name: "imagePath", label: "Image Path", widget: "image", required: false }
-          - { name: "imageAlt", label: "Image Alt", widget: "string", required: false }
+          - { name: "imagePath", label: "Image Path", widget: "image" }
+          - { name: "imageAlt", label: "Image Alt", widget: "string", default: "" }
       - { name: "appearsInHome", label: "Apparait sur la page home", widget: "boolean" }
       - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: contentfulPage
