@@ -2,7 +2,7 @@
 draft: true
 metaData:
   path: redimensionnement-des-instances
-  title: Redimensionnement des instances
+  title: Redimensionnement des instancess
   description: >-
     Ajustez les ressources allouées à vos VM sur les évolutions des besoins de
     vos projets, sans avoir à créer une nouvelle instance.
@@ -16,8 +16,8 @@ description: >-
   Ajustez les ressources allouées à vos VM sur les évolutions des besoins de vos
   projets, sans avoir à créer une nouvelle instance.
 image:
+  imageAlt: ''
   imagePath: /images/slide-1.png
-  imageAlt: ""
 appearsInHome: true
 lastmod: '2019-12-12'
 ---
