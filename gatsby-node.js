@@ -35,8 +35,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       case "simplePage":
         return simplePageTemplate;
       case "feature":
-        // return null;
-        return featureTemplate;
+        return null;
+        // return featureTemplate;
       default:
         return null;
     }
