@@ -30,6 +30,8 @@ COPY gatsby-config.js ./
 COPY gatsby-config.esm.js ./
 COPY gatsby-node.js ./
 COPY data/ ./data/
+COPY .env.development ./
+COPY .env.production ./
 
 # Install app dependencies.
 # The following command is necessary for the build to work since the app has been upgraded to node 11
@@ -59,14 +61,16 @@ USER node
 FROM nginx:alpine as develop
 
 RUN rm -rf /usr/share/nginx/html/*
-RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
-    ln -sf /dev/stderr /var/log/nginx/error.log
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 COPY --from=build /home/node/app/public /usr/share/nginx/html
 COPY /403.html /usr/share/nginx/html/403.html
 COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
+COPY /init.sh /init.sh
 
-#USER nginx
+RUN chmod +x /init.sh
+
+CMD ["sh","-c","/init.sh"]
 
 ##############################
 # RELEASE                    #
@@ -74,11 +78,13 @@ COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
 FROM nginx:alpine as production
 
 RUN rm -rf /usr/share/nginx/html/*
-RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
-    ln -sf /dev/stderr /var/log/nginx/error.log
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 COPY --from=build /home/node/app/public /usr/share/nginx/html
 COPY /403.html /usr/share/nginx/html/403.html
 COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
+COPY /init.sh /init.sh
 
-#USER nginx
+RUN chmod +x /init.sh
+
+CMD ["sh","-c","/init.sh"]

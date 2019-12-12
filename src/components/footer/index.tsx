@@ -10,7 +10,7 @@ export interface FooterOptionsProps {
 const Index = (props: FooterOptionsProps) => {
   const data: FooterQueryResult = useStaticQuery(graphql`
     query FooterQuery {
-      markdownRemark(frontmatter: { title: { eq: "Footer" } }) {
+      markdownRemark(frontmatter: { name: { eq: "footer" } }) {
         frontmatter {
           sections {
             title

@@ -1,5 +1,6 @@
 ---
 title: "Footer"
+name: "footer"
 sections:
   - title: "Foire aux questions"
     links:

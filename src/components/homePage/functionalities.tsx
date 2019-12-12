@@ -1,5 +1,5 @@
 import React from "react";
-// import Slides from "./slides";
+import Slides from "./slides";
 
 const Functionalities = () => {
   return (

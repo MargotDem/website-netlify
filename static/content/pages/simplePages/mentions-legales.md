@@ -16,7 +16,7 @@ lastmod: '2019-12-05'
 * SAS au capital de 86 853 €
 * RCS Paris 481 681 724
 * Siège social : 5 rue de la Terrasse, 75017 Paris 
-* Courriel : hello@nua.ge 
+* Courriel : info@oxeva.fr
 * Tél. 01 80 05 97 30
 
 

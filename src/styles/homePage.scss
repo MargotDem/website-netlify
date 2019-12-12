@@ -29,9 +29,7 @@
 
   .home-logo {
     margin: 30px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter;
     height: 6.5rem;
     @include until($tabletPortraitBreakpoint) {
       height: 6rem;
@@ -129,10 +127,7 @@
     @include until($tabletPortraitBreakpoint) {
       .home-contact-form {
         padding-top: 12px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexCenterColumn;
         #sib-form {
           width: 100%;
         }
@@ -176,8 +171,7 @@
 /* contact form */
 
 .error-message-container {
-  display: flex;
-  justify-content: center;
+  @include flexCenter;
 }
 
 .error-message {

@@ -12,7 +12,7 @@ export interface HeaderOptionsProps {
 const Index = (props: HeaderOptionsProps) => {
   const data: HeaderQueryResult = useStaticQuery(graphql`
     query HeaderQuery {
-      markdownRemark(frontmatter: { title: { eq: "Header" } }) {
+      markdownRemark(frontmatter: { name: { eq: "header" } }) {
         frontmatter {
           sections {
             title

@@ -1,18 +1,13 @@
 .login-page-container {
-    display: flex;
+    @include flexCenter;
     position: fixed;
     top: 0px;
     left: 0px;
-    justify-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
     color: $white;
     section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexCenterColumn;
     }
 }
 
@@ -73,6 +68,12 @@
     display: flex;
     justify-content: center;
     margin: 0px 20px;
+    @include until($tabletPortraitBreakpoint) {
+        width: 75%;
+    }
+    @include until($mobileBreakpoint) {
+        width: 90%;
+    }
     div {
         border-bottom: 1px solid $white;
     }

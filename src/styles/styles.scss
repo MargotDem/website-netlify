@@ -7,6 +7,17 @@ $midLaptopBreakpoint: 1300px;
 
 $container-offset: 24px;
 
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexCenterColumn {
+    @include flexCenter;
+    flex-direction: column;
+}
+
 @import "~bulma/bulma.sass";
 
 @import '~@creativebulma/bulma-collapsible';

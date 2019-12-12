@@ -4,6 +4,39 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 collections:
+  - name: feature
+    label: "Feature"
+    folder: "/static/content/pages/features"
+    create: true
+    fields:
+      - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      - name: "metaData"
+        label: "Meta Data"
+        widget: "object"
+        fields:
+          - { name: "path", label: "Path" }
+          - { name: "title", label: "Title" }
+          - { name: "description", label: "Description", widget: "text", required: false }
+          - name: "image"
+            label: "Image"
+            widget: "object"
+            required: false
+            fields:
+              - { name: "imagePath", label: "Image Path", widget: "image", required: false }
+              - { name: "imageAlt", label: "Image Alt", widget: "string", required: false }
+          - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
+          - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
+      - {label: "Page Type", name: "pageType", widget: "hidden", default: "feature"}
+      - { name: "title", label: "Title" }
+      - { name: "description", label: "Description", widget: "text" }
+      - name: "image"
+        label: "Image"
+        widget: "object"
+        fields:
+          - { name: "imagePath", label: "Image Path", widget: "image", required: false }
+          - { name: "imageAlt", label: "Image Alt", widget: "string", required: false }
+      - { name: "appearsInHome", label: "Apparait sur la page home", widget: "boolean" }
+      - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: contentfulPage
     label: "Contentful Page"
     folder: "/static/content/pages/contentfulPages"
@@ -78,12 +111,12 @@ collections:
               - { name: "imageAlt", label: "Image Alt", widget: "string", required: false }
           - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
           - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
-      - {label: "Page Type", name: "pageType", widget: "hidden", default: "simplePage"}
+      - { label: "Page Type", name: "pageType", widget: "hidden", default: "simplePage"}
       - { name: title, label: Title }
       - { name: body, label: Description, widget: markdown }
       - { label: "Date", name: "lastmod", widget: "hiddenDate" }
-  - name: "singleElements"
-    label: "Single Elements"
+  - name: "headerAndFooter"
+    label: "Header Et Footer"
     delete: false
     files:
       - name: header
@@ -91,6 +124,7 @@ collections:
         file: "/static/content/header.md"
         fields:
           - { name: title, label: Title }
+          - { name: "name", label: "name", widget: "hidden", default: "header" }
           - name: sections
             label: Sections
             widget: list
@@ -111,6 +145,7 @@ collections:
         file: "/static/content/footer.md"
         fields:
           - { name: title, label: Title }
+          - { name: "name", label: "name", widget: "hidden", default: "footer" }
           - name: sections
             label: Sections
             widget: list
@@ -122,18 +157,3 @@ collections:
                 fields:
                   - { name: linkName, label: LinkName }
                   - { name: linkPath, label: LinkPath }
-      - name: "homePage"
-        label: "Home Page"
-        file: "/static/content/homePage.md"
-        fields:
-          - { name: title, label: Title }
-          - name: "contents"
-            label: "Contents"
-            widget: "list"
-            fields:
-              - name: "content"
-                label: "Content"
-                widget: "relation"
-                collection: "content"
-                searchFields: ["title"]
-                valueField: "title"

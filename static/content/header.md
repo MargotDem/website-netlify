@@ -1,5 +1,6 @@
 ---
 title: "Header"
+name: "header"
 sections:
   - title: "Comment"
     linkPath: "comment"
