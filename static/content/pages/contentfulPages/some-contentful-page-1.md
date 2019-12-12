@@ -20,6 +20,10 @@ contents:
           imageAlt: alt
           imagePath: /images/slide-1.png
         title: First content of page
+  - contentTypesWidget:
+      text:
+        text: The text.
+        title: Text title
 lastmod: '2019-12-12'
 ---
 
