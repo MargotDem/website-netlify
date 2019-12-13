@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 path: feature/redimensionnement-des-instances
 title: Redimensionnement des instances
 metaData:
