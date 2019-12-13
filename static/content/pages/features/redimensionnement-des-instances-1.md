@@ -7,6 +7,7 @@ metaData:
     Ajustez les ressources allouées à vos VM sur les évolutions des besoins de
     vos projets, sans avoir à créer une nouvelle instance.
   image:
+    imageAlt: alt
     imagePath: /images/slide-1.png
   openGraphType: website
   twitterCard: summary
@@ -18,6 +19,6 @@ image:
   imageAlt: alt
   imagePath: /images/slide-1.png
 appearsInHome: true
-lastmod: '2019-12-12'
+lastmod: '2019-12-13'
 ---
 
