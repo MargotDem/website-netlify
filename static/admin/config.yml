@@ -8,14 +8,15 @@ collections:
     label: "Feature"
     folder: "/static/content/pages/features"
     create: true
+    identifier_field: path
     fields:
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      - { label: "Draft", name: "draft", widget: "boolean", default: true}
+      - { name: "path", label: "Url" }
+      - { name: "title", label: "Titre" }
       - name: "metaData"
         label: "Meta Data"
         widget: "object"
         fields:
-          - { name: "path", label: "Path" }
-          - { name: "title", label: "Title" }
           - { name: "description", label: "Description", widget: "text", required: false }
           - name: "image"
             label: "Image"
@@ -26,29 +27,29 @@ collections:
               - { name: "imageAlt", label: "Image Alt", widget: "string", required: false }
           - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
           - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
-      - {label: "Page Type", name: "pageType", widget: "hidden", default: "feature"}
-      - { name: "title", label: "Title" }
+      - { label: "Page Type", name: "pageType", widget: "hidden", default: "feature"}
       - { name: "description", label: "Description", widget: "text" }
       - name: "image"
         label: "Image"
         widget: "object"
         fields:
           - { name: "imagePath", label: "Image Path", widget: "image" }
-          - { name: "imageAlt", label: "Image Alt", widget: "string", default: "" }
+          - { name: "imageAlt", label: "Image Alt", widget: "string" }
       - { name: "appearsInHome", label: "Apparait sur la page home", widget: "boolean" }
       - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: contentfulPage
     label: "Contentful Page"
     folder: "/static/content/pages/contentfulPages"
     create: true
+    identifier_field: path
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      - { name: "path", label: "Url" }
+      - { name: "title", label: "Titre" }
       - name: "metaData"
         label: "Meta Data"
         widget: "object"
         fields:
-          - { name: "path", label: "Path" }
-          - { name: "title", label: "Title" }
           - { name: "description", label: "Description", widget: "text", required: false }
           - name: "image"
             label: "Image"
@@ -60,7 +61,6 @@ collections:
           - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
           - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
       - {label: "Page Type", name: "pageType", widget: "hidden", default: "contentfulPage"}
-      - { name: "title", label: "Title" }
       - name: "contents"
         label: "Contents"
         widget: "list"
@@ -93,14 +93,15 @@ collections:
     label: "Simple Page"
     folder: "/static/content/pages/simplePages"
     create: true
+    identifier_field: path
     fields:
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      - { name: "path", label: "Url" }
+      - { name: "title", label: "Titre" }
       - name: "metaData"
         label: "Meta Data"
         widget: "object"
         fields:
-          - { name: "path", label: "Path" }
-          - { name: "title", label: "Title" }
           - { name: "description", label: "Description", widget: "text", required: false }
           - name: "image"
             label: "Image"
@@ -112,8 +113,7 @@ collections:
           - { name: "openGraphType", label: "Open Graph Type", widget: "hidden", default: "website" }
           - { name: "twitterCard", label: "Twitter Card", widget: "hidden", default: "summary" }
       - { label: "Page Type", name: "pageType", widget: "hidden", default: "simplePage"}
-      - { name: title, label: Title }
-      - { name: body, label: Description, widget: markdown }
+      - { name: body, label: "Contenu", widget: markdown }
       - { label: "Date", name: "lastmod", widget: "hiddenDate" }
   - name: "headerAndFooter"
     label: "Header Et Footer"

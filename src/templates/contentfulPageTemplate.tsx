@@ -41,7 +41,13 @@ const SimplePageTemplate = ({ data }: { data: ContentfulPageQueryResult }) => {
 
   return (
     <div className="column is-10 is-offset-1">
-      <SEO data={markdownRemark.frontmatter.metaData} />
+      <SEO
+        data={{
+          ...frontmatter.metaData,
+          title: frontmatter.title,
+          path: frontmatter.path
+        }}
+      />
       {frontmatter.contents.map(({ contentTypesWidget }, i: number) => {
         return <div key={i}>{displayContent(contentTypesWidget)}</div>;
       })}
@@ -51,11 +57,11 @@ const SimplePageTemplate = ({ data }: { data: ContentfulPageQueryResult }) => {
 
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { metaData: { path: { eq: $path } } }) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
+        path
+        title
         metaData {
-          path
-          title
           description
           image {
             imagePath

@@ -5,7 +5,7 @@ import config from "../../../data/SiteConfig";
 import { MetaData } from "../../types/types";
 
 interface SEOProps {
-  data: MetaData;
+  data: MetaData & { title: string; path: string };
 }
 
 const Index = (props: SEOProps) => {

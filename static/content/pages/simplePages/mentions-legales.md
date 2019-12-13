@@ -1,14 +1,13 @@
 ---
-draft: false
+draft: true
+path: mentions-legales
+title: Mentions Légales
 metaData:
   description: Mentions légales
   openGraphType: website
-  path: /mentions-legales
-  title: Mentions légales
   twitterCard: summary
 pageType: simplePage
-title: Mentions légales
-lastmod: '2019-12-05'
+lastmod: '2019-12-12'
 ---
 # ÉDITEUR ET HÉBERGEUR
 

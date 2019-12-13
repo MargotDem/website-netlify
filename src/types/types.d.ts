@@ -1,21 +1,18 @@
+interface Image {
+  imagePath: string;
+  imageAlt: string;
+}
+
 export interface MetaData {
-  path?: string;
-  title?: string;
   description?: string;
   openGraphType?: string;
   twitterCard?: string;
-  image?: {
-    imagePath: string;
-    imageAlt: string;
-  };
+  image?: Image;
 }
 
 export interface SimpleContentType {
   description: string;
-  image: {
-    imagePath: string;
-    imageAlt: string;
-  };
+  image: Image;
   title: string;
 }
 
@@ -35,7 +32,21 @@ export interface ContentfulPageQueryResult {
   markdownRemark: {
     frontmatter: {
       metaData: MetaData;
+      title: string;
+      path: string;
       contents: ContentTypesWidget[];
+    };
+  };
+}
+
+export interface FeatureQueryResult {
+  markdownRemark: {
+    frontmatter: {
+      metaData: MetaData;
+      title: string;
+      path: string;
+      description: string;
+      image: Image;
     };
   };
 }
@@ -44,6 +55,8 @@ export interface SimplePageQueryResult {
   markdownRemark: {
     frontmatter: {
       metaData: MetaData;
+      title: string;
+      path: string;
     };
     html: string;
   };

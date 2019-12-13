@@ -3,25 +3,32 @@ import { graphql } from "gatsby";
 
 import withMainLayout from "./mainLayout";
 import SEO from "../components/SEO";
-import { ContentfulPageQueryResult } from "../types/types";
+import { FeatureQueryResult } from "../types/types";
 
-const SimplePageTemplate = ({ data }: { data: ContentfulPageQueryResult }) => {
+const SimplePageTemplate = ({ data }: { data: FeatureQueryResult }) => {
   const { markdownRemark } = data;
+  const { frontmatter } = markdownRemark;
   return (
     <div className="column is-10 is-offset-1">
-      <SEO data={markdownRemark.frontmatter.metaData} />
+      <SEO
+        data={{
+          ...frontmatter.metaData,
+          title: frontmatter.title,
+          path: frontmatter.path
+        }}
+      />
       WIP
     </div>
   );
 };
 
 export const pageQuery = graphql`
-  query($pagePath: String!) {
-    markdownRemark(frontmatter: { metaData: { path: { eq: $pagePath } } }) {
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
+        path
+        title
         metaData {
-          path
-          title
           description
           image {
             imagePath
@@ -30,7 +37,6 @@ export const pageQuery = graphql`
           openGraphType
           twitterCard
         }
-        title
         description
         image {
           imagePath

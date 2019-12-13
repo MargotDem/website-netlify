@@ -7,12 +7,17 @@ import { SimplePageQueryResult } from "../types/types";
 
 const SimplePageTemplate = ({ data }: { data: SimplePageQueryResult }) => {
   const { markdownRemark } = data;
-  const { html } = markdownRemark;
-  const metaData = markdownRemark.frontmatter.metaData;
-  const title = metaData.title as string;
+  const { html, frontmatter } = markdownRemark;
+  const title = frontmatter.title as string;
   return (
     <div className="column is-10 is-offset-1">
-      <SEO data={metaData} />
+      <SEO
+        data={{
+          ...frontmatter.metaData,
+          title: frontmatter.title,
+          path: frontmatter.path
+        }}
+      />
       <section className="section simple-page">
         <div className="columns is-centered">
           <div className="column is-11">
@@ -30,11 +35,11 @@ const SimplePageTemplate = ({ data }: { data: SimplePageQueryResult }) => {
 
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { metaData: { path: { eq: $path } } }) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
+        path
+        title
         metaData {
-          path
-          title
           description
           image {
             imagePath
